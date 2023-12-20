@@ -1,0 +1,23 @@
+/* preços */
+.precoAntigoSlide{
+    font-size: 12px;
+    color: lightgray;
+  }
+  .precoNovoSlide{
+    font-size: 30px;
+  }
+  
+  /* slide */
+  .slides{
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.808);
+    display: block;
+    margin: auto;
+    width: 100%;     
+  }
+  .itemSlide{
+    color: white;
+    text-shadow: 7px 3px 20px rgb(0, 0, 0, 1.0);
+  }
+  p.itemSlide{
+    font-size: 20px;
+  }

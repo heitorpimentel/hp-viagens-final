@@ -1,0 +1,22 @@
+.card{
+    box-shadow: 1px 2px 15px rgba(0, 0, 0, 0.808);
+    overflow: hidden;
+}
+.card img{
+    width: 100%;
+    height: 250px;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+}
+.card:hover{
+    border: 1px solid wheat;
+    transition: 0.5s;
+    box-shadow: -2px 3px 20px 8px rgba(255, 255, 255, 0.45);
+}
+.card:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.cardImgTop{
+    overflow: hidden;    
+}

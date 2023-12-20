@@ -1,0 +1,45 @@
+.naveg{    
+    background-color: var(--cor05);
+    margin: auto;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.452);
+}
+a.active > .fundoIcon{
+    padding: 6px;
+    border-radius: 50%;    
+    background-color: var(--cor01);    
+}
+.navbarBrand{
+    margin-left: -30px;
+    margin-right: 30px;
+}
+.navbarNav{
+    width: 80%;
+    display: flex;
+    
+    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.navItem{
+    font-size: 13px;
+}
+.navLink{
+    padding-bottom: 3px;
+}
+Link.active{
+    border-bottom: 3px solid var(--cor01);
+}
+.navLink:hover{
+    border-bottom: 3px solid var(--cor01);   
+    transition: 0.15s;
+} 
+a.navLink > .fundoIcon:hover{
+    padding: 6px;
+    border-radius: 50%;    
+    background-color: var(--cor01);
+    transition: 0.3s;
+}
+.fundoIcon{
+    padding: 6px;    
+}
