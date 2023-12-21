@@ -1,0 +1,6 @@
+.fundoPromo{
+    background: url('../public/imagens/imagens-hotel/img-slide-01-hotel.jpg') no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}

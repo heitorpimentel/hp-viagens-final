@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import styles from '@/styles/Promo.module.css'
+import CardiIcon from '@/components/CardiIcon'
 
 export default function promocoes() {
   return (
@@ -9,12 +11,20 @@ export default function promocoes() {
       </Head>
       <main>
         <section className="position-cards">
-          <section className="fundo-pos-slide-promo">
+          <section className={`${styles.fundoPromo}`}>
             <div className="titulo-mensagem-card">
               <h3>Aproveite as melhores promoções!</h3>
             </div>
             {/* Início dos cards */}
             <section className="cartoes py-4">
+              <CardiIcon 
+              tituloCard=""
+              icon1=""  texto1=""
+              icon2=""  texto2=""
+              icon3=""  texto3=""
+              icon4=""  texto4=""
+              icon5=""  texto5=""
+              />
               <div
                 className="container container-fluid card"
                 style={{ width: "18rem" }}
