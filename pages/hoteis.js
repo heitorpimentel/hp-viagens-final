@@ -1,4 +1,5 @@
 import React from 'react'
+import Slides from '@/components/Slides'
 
 export default function hoteis() {
   return (
@@ -151,120 +152,34 @@ export default function hoteis() {
             <option>Fortaleza, Ceará</option>
           </datalist>
         </section>
-        <section className="slides">
-          {" "}
-          {/* início dos slides */}
-          <div
-            id="carouselExampleFade"
-            className="carousel slide carousel-fade"
-            data-ride="carousel"
-          >
-            <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img
-                  src="./imagens/imagens-hotel/img-slide-01-hotel.jpg"
-                  alt="Imagem de um hotel"
-                />
-                <div className="carousel-caption d-none d-md-block text-left">
-                  <h2 className="item-slide my-4">Os melhores Hotéis</h2>
-                  <p className="item-slide">
-                    Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
-                    promoção antes que esgote.
-                  </p>
-                  <p className="col item-slide">
-                    <small className="row preco-antigo-slide">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo-slide">R$ 800,00</strong>
-                  </p>
-                  <a
-                    className="btn btn-lg row m-auto w-100 item-slide"
-                    href="./busca-slide.html"
-                    role="button"
-                  >
-                    <button className="btn" type="button">
-                      Aproveite agora mesmo
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  src="./imagens/imagens-hotel/img-slide-02-hotel.jpg"
-                  alt="Imagem de um hotel"
-                />
-                <div className="carousel-caption d-none d-md-block text-left">
-                  <h2 className="item-slide my-4">Não perca!</h2>
-                  <p className="item-slide">
-                    Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
-                    promoção antes que esgote.
-                  </p>
-                  <p className="col item-slide">
-                    <small className="row preco-antigo-slide">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo-slide">R$ 800,00</strong>
-                  </p>
-                  <a
-                    className="btn btn-lg row m-auto w-100 item-slide"
-                    href="./busca-slide.html"
-                    role="button"
-                  >
-                    <button className="btn" type="button">
-                      Aproveite agora mesmo
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img
-                  src="./imagens/imagens-hotel/img-slide-03-hotel.jpg"
-                  alt="Imagem de um mirante de Martins RN"
-                />
-                <div className="carousel-caption d-none d-md-block text-left">
-                  <h2 className="item-slide my-4">Martins - RN</h2>
-                  <p className="item-slide">
-                    Este é um simplesmente um ótimo lugar para tomar seu café da manhã
-                    e se sentir revigorado!
-                  </p>
-                  <p className="col item-slide">
-                    <small className="row preco-antigo-slide">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo-slide">R$ 800,00</strong>
-                  </p>
-                  <a
-                    className="btn btn-lg row m-auto w-100 item-slide"
-                    href="./busca-slide.html"
-                    role="button"
-                  >
-                    <button className="btn" type="button">
-                      Aproveite agora mesmo
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <a
-              className="carousel-control-prev"
-              href="#carouselExampleFade"
-              role="button"
-              data-slide="prev"
-            >
-              <span className="carousel-control-prev-icon" aria-hidden="true" />
-              <span className="sr-only">Anterior</span>
-            </a>
-            <a
-              className="carousel-control-next"
-              href="#carouselExampleFade"
-              role="button"
-              data-slide="next"
-            >
-              <span className="carousel-control-next-icon" aria-hidden="true" />
-              <span className="sr-only">Próximo</span>
-            </a>
-          </div>
-        </section>{" "}
+        <Slides 
+        img01="imagens/imagens-hotel/img-slide-01-hotel.jpg"
+        desc01="Imagem de um Hotel"
+        tituloS1="Os melhores Hotéis"
+        textoS1="Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
+        promoção antes que esgote."
+        precoAntS1="R$ 1.250,00"
+        precoNovS1="R$ 975,00"
+        btnS1="Aproveite agora mesmo"
+
+        img02="imagens/imagens-hotel/img-slide-02-hotel.jpg"
+        desc02="Imagem de um Hotel"
+        tituloS2="Não perca!"
+        textoS2="Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
+        promoção antes que esgote."
+        precoAntS2="R$ 1.250,00"
+        precoNovS2="R$ 975,00"
+        btnS2="Aproveite agora mesmo"
+
+        img03="imagens/imagens-hotel/img-slide-03-hotel.jpg"
+        desc03="Imagem de um mirante de Martins RN"
+        tituloS3="Martins - RN"
+        textoS3="Este é um simplesmente um ótimo lugar para tomar seu café da manhã
+        e se sentir revigorado!"
+        precoAntS3="R$ 1.250,00"
+        precoNovS3="R$ 975,00"
+        btnS3="Aproveite agora mesmo"
+        />
         {/* Fim dos slides */}
         <section className="position-cards">
           <section className="fundo-pos-slide-hotel">
