@@ -1,11 +1,13 @@
 import React from 'react'
 import Slides from '@/components/Slides'
+import Cards from '@/components/Cards'
+import styles from '@/styles/Hoteis.module.css'
 
 export default function hoteis() {
   return (
     <>
       <main>
-        <section className="topo-hotel">
+        <section className={`${styles.topoHotel}`}>
           <div className="buscas">
             <h3 className="titulo-formulario py-3">Hotéis</h3>
             <form action="busca-topo.html" method="post">
@@ -181,9 +183,9 @@ export default function hoteis() {
         btnS3="Aproveite agora mesmo"
         />
         {/* Fim dos slides */}
-        <section className="position-cards">
-          <section className="fundo-pos-slide-hotel">
-            <div className="d-md-none promo-slide container-fluid card">
+        <section className={`${styles.positionCard}`}>
+          <section className={`${styles.fundoPosSlideHotel}`}>
+            <div className="d-md-none promoSlide container-fluid card">
               <div className="card-body">
                 <h3 className="text-center">Não fique de fora dessa!</h3>
                 <p className="card-text text-center">
@@ -193,7 +195,10 @@ export default function hoteis() {
                   <span className="row">A partir de: </span>
                   <strong className="row">R$ 800,00</strong>
                 </p>
-                <a href="./promocoes.html" className="btn container botao-busca">
+                <a
+                  href="/promocoes.html"
+                  className="btn container botao-busca"
+                >
                   <button className="btn btn-sm container" type="button">
                     Principais promoções
                   </button>
@@ -205,159 +210,66 @@ export default function hoteis() {
             </div>
             {/* Início dos cards */}
             <section className="cartoes col-md-12 py-5">
-              <div className="card" style={{ width: "18rem" }}>
-                <div className="card-img-top">
-                  <img
-                    src="imagens/imagens-hotel/img-card-01-hotel.jpg"
-                    alt="Imagem de capa do card"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Porto de Galinhas/PE</h5>
-                  <p className="card-text pb-4">
-                    Venha aproveitar para passar 2 dias imperdíveis em Porto de
-                    Galinhas
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn botao-busca">
-                    <button className="btn" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="card" style={{ width: "18rem" }}>
-                <div className="card-img-top">
-                  <img
-                    src="imagens/imagens-hotel/img-card-02-hotel.jpg"
-                    alt="Imagem de capa do card"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Ponta Negra/RN</h5>
-                  <p className="card-text pb-5">
-                    Preço incrível para este ótimo hotel em Ponta Negra
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn botao-busca">
-                    <button className="btn" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="card" style={{ width: "18rem" }}>
-                <div className="card-img-top">
-                  <img
-                    src="imagens/imagens-hotel/img-card-03-hotel.jpg"
-                    alt="Imagem de capa do card"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Garanhuns/PE</h5>
-                  <p className="card-text pb-5">
-                    Venha sentir o clima gostoso desta serra pernambucana
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn botao-busca">
-                    <button className="btn" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="card" style={{ width: "18rem" }}>
-                <div className="card-img-top">
-                  <img
-                    src="imagens/imagens-hotel/img-card-04-hotel.jpg"
-                    alt="Imagem de capa do card"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Martins/RN</h5>
-                  <p className="card-text">
-                    Um ótimo lugar para aproveitar um fim de semana e tomar aquele
-                    chocolate quente com uma vista maravilhosa
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn botao-busca">
-                    <button className="btn" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="card" style={{ width: "18rem" }}>
-                <div className="card-img-top">
-                  <img
-                    src="imagens/imagens-hotel/img-card-05-hotel.jpg"
-                    alt="Imagem de capa do card"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Pipa/RN</h5>
-                  <p className="card-text pb-5">
-                    Venha conhecer as falésias de Pipa e sua beleza natural
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn botao-busca">
-                    <button className="btn" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="card" style={{ width: "18rem" }}>
-                <div className="card-img-top">
-                  <img
-                    src="imagens/imagens-hotel/img-card-06-hotel.jpg"
-                    alt="Imagem de capa do card"
-                  />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">Maceió/AL</h5>
-                  <p className="card-text">
-                    Que tal passar um tempinho nesse litoral alagoano e dar aquela
-                    escapada dos problemas?
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn botao-busca">
-                    <button className="btn" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
+              <Cards
+                url="/imagens/imagens-hotel/img-card-01-hotel.jpg"
+                descricaoImg="Imagem de Porto de Galinhas/PE"
+                tituloCard="Porto de Galinhas/PE"
+                textoCard="Venha aproveitar para passar 2 dias imperdíveis em Porto de Galinhas"
+                precoAntigo="R$ 1.000,00"
+                precoNovo="R$ 800,00"
+                nomeBotao="Aproveite já!"
+              />
+
+              <Cards
+                url="/imagens/imagens-hotel/img-card-02-hotel.jpg"
+                descricaoImg="Imagem de Ponta Negra /RN"
+                tituloCard="Ponta Negra/RN"
+                textoCard="Preço incrível para este ótimo hotel em Ponta Negra"
+                precoAntigo="R$ 1.000,00"
+                precoNovo="R$ 800,00"
+                nomeBotao="Aproveite já!"
+              />
+
+              <Cards
+                url="/imagens/imagens-hotel/img-card-03-hotel.jpg"
+                descricaoImg="Imagem de Garanhuns/PE"
+                tituloCard="Garanhuns/PE"
+                textoCard="Venha sentir o clima gostoso desta serra pernambucana"
+                precoAntigo="R$ 1.000,00"
+                precoNovo="R$ 800,00"
+                nomeBotao="Aproveite já!"
+              />
+
+              <Cards
+                url="/imagens/imagens-hotel/img-card-04-hotel.jpg"
+                descricaoImg="Imagem de Martins/RN"
+                tituloCard="Martins/RN"
+                textoCard="Um ótimo lugar para aproveitar um fim de semana e tomar aquele chocolate quente com uma vista maravilhosa"
+                precoAntigo="R$ 1.000,00"
+                precoNovo="R$ 800,00"
+                nomeBotao="Aproveite já!"
+              />
+
+              <Cards
+                url="/imagens/imagens-hotel/img-card-05-hotel.jpg"
+                descricaoImg="Imagem de Pipa/RN"
+                tituloCard="Pipa/RN"
+                textoCard="Venha conhecer as falésias de Pipa e sua beleza natural"
+                precoAntigo="R$ 1.000,00"
+                precoNovo="R$ 800,00"
+                nomeBotao="Aproveite já!"
+              />
+
+              <Cards
+                url="/imagens/imagens-hotel/img-card-06-hotel.jpg"
+                descricaoImg="Imagem de Maceió/AL"
+                tituloCard="Maceió/AL"
+                textoCard="Que tal passar um tempinho nesse litoral alagoano e dar aquela escapada dos problemas?"
+                precoAntigo="R$ 1.000,00"
+                precoNovo="R$ 800,00"
+                nomeBotao="Aproveite já!"
+              />
+              
             </section>{" "}
             {/* Fim dos cards */}
           </section>

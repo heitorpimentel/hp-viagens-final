@@ -1,0 +1,21 @@
+.topoHotel{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    background-color: var(--cor05); 
+    background: url('../public/imagens/imagens-hotel/img-meio-hotel.jpg') no-repeat fixed;
+    background-position: bottom right;    
+    background-size: cover;    
+  }
+  /* seçao de posição dos cards */
+  .positionCard{
+    display: flex;
+    flex-wrap: wrap;    
+  }
+  
+  .fundoPosSlideHotel{
+    background: url('../public/imagens/imagens-aviao/img-meio-aviao.jpg') no-repeat;
+    background-position: center right;
+    background-attachment: fixed;
+    background-size: cover;
+  }
