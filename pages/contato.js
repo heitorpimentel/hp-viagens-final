@@ -1,8 +1,12 @@
 import React from 'react'
+import Head from 'next/head'
 
 export default function contato() {
   return (
     <>
+      <Head>
+        <title>HP Viagens - Contato</title>
+      </Head>
       <main className="topo">
         <section className="topo">
           <h2>Fale conosco</h2>

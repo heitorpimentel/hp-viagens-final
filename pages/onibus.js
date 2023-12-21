@@ -1,12 +1,17 @@
 import React from 'react'
+import Head from 'next/head'
+import styles from '@/styles/Onibus.module.css'
 import CardFluid from '@/components/CardFluid'
 
 export default function onibus() {
   return (
     <>
+      <Head>
+        <title>HP Viagens - Passagens de Ônibus</title>
+      </Head>
       <main>
-        <section className="topo-onibus">
-          <div className="sombra-onibus">
+        <section className={`${styles.fundoOnibus}`}>
+          <div className={`${styles.topoOnibus} voo`}>
             <div className="buscas">
               <h3 className="titulo-formulario py-2">Ônibus</h3>
               <form action="busca-topo.html" method="post">
@@ -171,115 +176,59 @@ export default function onibus() {
           </div>
         </section>
         <section className="position-cards">
-          <section className="fundo-pos-slide-onibus">
+          <section className={`${styles.fundoOnibus}`}>
             <div className="titulo-mensagem-card">
               <h3>Conheça várias cidades pelo Brasil</h3>
             </div>
             {/* Início dos cards */}
             <section className="cartoes py-5">
-              <CardFluid 
-              tituloCard="Recife x Natal"
-              textoCard="Consulte disponibilidade de horários e curta a viagem!"
-              precoAntigo="R$ 156,00"
-              precoNovo="R$ 80,00"
-              nomeBotao="Aproveite já"
+              <CardFluid
+                tituloCard="Recife x Natal"
+                textoCard="Consulte disponibilidade de horários e curta a viagem!"
+                precoAntigo="R$ 156,00"
+                precoNovo="R$ 80,00"
+                nomeBotao="Aproveite já"
               />
 
-              <div className="container container-fluid card">
-                <div className="card-body">
-                  <h5 className="card-title text-center">Maceió x Fortaleza</h5>
-                  <p className="card-text">
-                    Consulte disponibilidade de horários e curta a viagem!
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn container botao-busca">
-                    <button className="btn container" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="container container-fluid card">
-                <div className="card-body">
-                  <h5 className="card-title text-center">Natal x Martins</h5>
-                  <p className="card-text">
-                    Consulte disponibilidade de horários e curta a viagem!
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn container botao-busca">
-                    <button className="btn container" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="container container-fluid card">
-                <div className="card-body">
-                  <h5 className="card-title text-center">Recife x Garanhuns</h5>
-                  <p className="card-text">
-                    Consulte disponibilidade de horários e curta a viagem!
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn container botao-busca">
-                    <button className="btn container" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="container container-fluid card">
-                <div className="card-body">
-                  <h5 className="card-title text-center">Gravatá x Recife</h5>
-                  <p className="card-text">
-                    Consulte disponibilidade de horários e curta a viagem!
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn container botao-busca">
-                    <button className="btn container" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="container container-fluid card">
-                <div className="card-body">
-                  <h5 className="card-title text-center">Natal x Pipa</h5>
-                  <p className="card-text">
-                    Consulte disponibilidade de horários e curta a viagem!
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn container botao-busca">
-                    <button className="btn container" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
+              <CardFluid
+                tituloCard="Maceió x Fortaleza"
+                textoCard="Consulte disponibilidade de horários e curta a viagem!"
+                precoAntigo="R$ 156,00"
+                precoNovo="R$ 80,00"
+                nomeBotao="Aproveite já"
+              />
+
+              <CardFluid
+                tituloCard="Natal x Martins"
+                textoCard="Consulte disponibilidade de horários e curta a viagem!"
+                precoAntigo="R$ 156,00"
+                precoNovo="R$ 80,00"
+                nomeBotao="Aproveite já"
+              />
+
+              <CardFluid
+                tituloCard="Recife x Garanhuns"
+                textoCard="Consulte disponibilidade de horários e curta a viagem!"
+                precoAntigo="R$ 156,00"
+                precoNovo="R$ 80,00"
+                nomeBotao="Aproveite já"
+              />
+
+              <CardFluid
+                tituloCard="Gravatá x Recife"
+                textoCard="Consulte disponibilidade de horários e curta a viagem!"
+                precoAntigo="R$ 156,00"
+                precoNovo="R$ 80,00"
+                nomeBotao="Aproveite já"
+              />
+
+              <CardFluid
+                tituloCard="Natal x Pipa"
+                textoCard="Consulte disponibilidade de horários e curta a viagem!"
+                precoAntigo="R$ 156,00"
+                precoNovo="R$ 80,00"
+                nomeBotao="Aproveite já"
+              />
             </section>{" "}
             {/* Fim dos cards */}
           </section>

@@ -1,8 +1,12 @@
 import React from 'react'
+import Head from 'next/head'
 
 export default function promocoes() {
   return (
     <>
+      <Head>
+        <title>HP Viagens - Promoções</title>
+      </Head>
       <main>
         <section className="position-cards">
           <section className="fundo-pos-slide-promo">

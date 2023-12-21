@@ -1,14 +1,15 @@
 import React from 'react'
+import Head from 'next/head'
 import Slides from '@/components/Slides'
 import Cards from '@/components/Cards'
 import styles from '@/styles/Hoteis.module.css'
-import Head from 'next/head'
+
 
 export default function hoteis() {
   return (
     <>
       <Head>
-        <title>HP Viagens - Hotéis</title>
+        <title>HP Viagens - Hotéis</title>        
       </Head>
       <main>
         <section className={`${styles.topoHotel}`}>
@@ -158,33 +159,33 @@ export default function hoteis() {
             <option>Fortaleza, Ceará</option>
           </datalist>
         </section>
-        <Slides 
-        img01="imagens/imagens-hotel/img-slide-01-hotel.jpg"
-        desc01="Imagem de um Hotel"
-        tituloS1="Os melhores Hotéis"
-        textoS1="Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
+        <Slides
+          img01="imagens/imagens-hotel/img-slide-01-hotel.jpg"
+          desc01="Imagem de um Hotel"
+          tituloS1="Os melhores Hotéis"
+          textoS1="Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
         promoção antes que esgote."
-        precoAntS1="R$ 1.250,00"
-        precoNovS1="R$ 975,00"
-        btnS1="Aproveite agora mesmo"
+          precoAntS1="R$ 1.250,00"
+          precoNovS1="R$ 975,00"
+          btnS1="Aproveite agora mesmo"
 
-        img02="imagens/imagens-hotel/img-slide-02-hotel.jpg"
-        desc02="Imagem de um Hotel"
-        tituloS2="Não perca!"
-        textoS2="Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
+          img02="imagens/imagens-hotel/img-slide-02-hotel.jpg"
+          desc02="Imagem de um Hotel"
+          tituloS2="Não perca!"
+          textoS2="Aqui você não encontra conversa fiada, o papo é sério. Pegue esta
         promoção antes que esgote."
-        precoAntS2="R$ 1.250,00"
-        precoNovS2="R$ 975,00"
-        btnS2="Aproveite agora mesmo"
+          precoAntS2="R$ 1.250,00"
+          precoNovS2="R$ 975,00"
+          btnS2="Aproveite agora mesmo"
 
-        img03="imagens/imagens-hotel/img-slide-03-hotel.jpg"
-        desc03="Imagem de um mirante de Martins RN"
-        tituloS3="Martins - RN"
-        textoS3="Este é um simplesmente um ótimo lugar para tomar seu café da manhã
+          img03="imagens/imagens-hotel/img-slide-03-hotel.jpg"
+          desc03="Imagem de um mirante de Martins RN"
+          tituloS3="Martins - RN"
+          textoS3="Este é um simplesmente um ótimo lugar para tomar seu café da manhã
         e se sentir revigorado!"
-        precoAntS3="R$ 1.250,00"
-        precoNovS3="R$ 975,00"
-        btnS3="Aproveite agora mesmo"
+          precoAntS3="R$ 1.250,00"
+          precoNovS3="R$ 975,00"
+          btnS3="Aproveite agora mesmo"
         />
         {/* Fim dos slides */}
         <section className={`${styles.positionCard}`}>
@@ -273,7 +274,7 @@ export default function hoteis() {
                 precoNovo="R$ 800,00"
                 nomeBotao="Aproveite já!"
               />
-              
+
             </section>{" "}
             {/* Fim dos cards */}
           </section>

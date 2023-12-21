@@ -1,0 +1,8 @@
+.topoOnibus{
+    background-color: rgba(0, 0, 0, 0.400);
+}
+.fundoOnibus{    
+    background: url('../public/imagens/imagens-onibus/img-topo-onibus.jpg') no-repeat fixed;
+    background-position: bottom left;    
+    background-size: cover;    
+}
