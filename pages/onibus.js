@@ -187,25 +187,6 @@ export default function onibus() {
 
               <div className="container container-fluid card">
                 <div className="card-body">
-                  <h5 className="card-title text-center">Recife x Natal</h5>
-                  <p className="card-text">
-                    Consulte disponibilidade de horários e curta a viagem!
-                  </p>
-                  <p className="col">
-                    <small className="row preco-antigo">
-                      <del>R$ 1.000,00</del>
-                    </small>
-                    <strong className="row preco-novo">R$ 800,00</strong>
-                  </p>
-                  <a href="busca-cards.html" className="btn container botao-busca">
-                    <button className="btn container" type="button">
-                      Aproveite já
-                    </button>
-                  </a>
-                </div>
-              </div>
-              <div className="container container-fluid card">
-                <div className="card-body">
                   <h5 className="card-title text-center">Maceió x Fortaleza</h5>
                   <p className="card-text">
                     Consulte disponibilidade de horários e curta a viagem!

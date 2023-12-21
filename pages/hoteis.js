@@ -2,10 +2,14 @@ import React from 'react'
 import Slides from '@/components/Slides'
 import Cards from '@/components/Cards'
 import styles from '@/styles/Hoteis.module.css'
+import Head from 'next/head'
 
 export default function hoteis() {
   return (
     <>
+      <Head>
+        <title>HP Viagens - Hotéis</title>
+      </Head>
       <main>
         <section className={`${styles.topoHotel}`}>
           <div className="buscas">
@@ -214,7 +218,7 @@ export default function hoteis() {
                 url="/imagens/imagens-hotel/img-card-01-hotel.jpg"
                 descricaoImg="Imagem de Porto de Galinhas/PE"
                 tituloCard="Porto de Galinhas/PE"
-                textoCard="Venha aproveitar para passar 2 dias imperdíveis em Porto de Galinhas"
+                textoCard="Aproveite dias imperdíveis em Porto de Galinhas"
                 precoAntigo="R$ 1.000,00"
                 precoNovo="R$ 800,00"
                 nomeBotao="Aproveite já!"
@@ -244,7 +248,7 @@ export default function hoteis() {
                 url="/imagens/imagens-hotel/img-card-04-hotel.jpg"
                 descricaoImg="Imagem de Martins/RN"
                 tituloCard="Martins/RN"
-                textoCard="Um ótimo lugar para aproveitar um fim de semana e tomar aquele chocolate quente com uma vista maravilhosa"
+                textoCard="Um ótimo lugar para tomar aquele chocolate quente"
                 precoAntigo="R$ 1.000,00"
                 precoNovo="R$ 800,00"
                 nomeBotao="Aproveite já!"
@@ -264,7 +268,7 @@ export default function hoteis() {
                 url="/imagens/imagens-hotel/img-card-06-hotel.jpg"
                 descricaoImg="Imagem de Maceió/AL"
                 tituloCard="Maceió/AL"
-                textoCard="Que tal passar um tempinho nesse litoral alagoano e dar aquela escapada dos problemas?"
+                textoCard="Que tal passar um tempinho nesse litoral alagoano?"
                 precoAntigo="R$ 1.000,00"
                 precoNovo="R$ 800,00"
                 nomeBotao="Aproveite já!"
