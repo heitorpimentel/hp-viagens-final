@@ -1,4 +1,5 @@
 import React from 'react'
+import CardFluid from '@/components/CardFluid'
 
 export default function onibus() {
   return (
@@ -176,6 +177,14 @@ export default function onibus() {
             </div>
             {/* Início dos cards */}
             <section className="cartoes py-5">
+              <CardFluid 
+              tituloCard="Recife x Natal"
+              textoCard="Consulte disponibilidade de horários e curta a viagem!"
+              precoAntigo="R$ 156,00"
+              precoNovo="R$ 80,00"
+              nomeBotao="Aproveite já"
+              />
+
               <div className="container container-fluid card">
                 <div className="card-body">
                   <h5 className="card-title text-center">Recife x Natal</h5>
