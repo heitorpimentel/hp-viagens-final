@@ -24,7 +24,7 @@ export default function onibus() {
                         name="inputData"
                         className="custom-control-input"
                         onclick="esconderData()"
-                        defaultChecked=""
+                        defaultChecked="checked"
                       />
                       <label className="custom-control-label" htmlFor="idaVolta">
                         Ida e Volta
@@ -61,7 +61,7 @@ export default function onibus() {
                             id="trecho-de-ida"
                             list="lista-lugares"
                             placeholder="Busque por cidade"
-                            required=""
+                            required="true"
                           />
                         </div>
                       </div>
@@ -81,7 +81,7 @@ export default function onibus() {
                             id="trecho-de-volta"
                             list="lista-lugares"
                             placeholder="Busque por cidade"
-                            required=""
+                            required="true"
                           />
                         </div>
                       </div>
@@ -101,7 +101,7 @@ export default function onibus() {
                             type="date"
                             aria-label="Ida"
                             id="data-ida"
-                            required=""
+                            required="true"
                           />
                         </div>
                       </div>
@@ -120,7 +120,7 @@ export default function onibus() {
                             type="date"
                             aria-label="Volta"
                             id="data-volta"
-                            required=""
+                            required="true"
                           />
                         </div>
                       </div>

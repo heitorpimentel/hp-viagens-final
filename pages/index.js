@@ -24,7 +24,7 @@ export default function Home() {
                         name="inputData"
                         className="custom-control-input"
                         onclick="esconderData()"
-                        defaultChecked=""
+                        defaultChecked="checked"
                       />
                       <label className="custom-control-label" htmlFor="idaVolta">
                         Ida e Volta
@@ -61,7 +61,7 @@ export default function Home() {
                             id="trecho-de-ida"
                             list="lista-lugares"
                             placeholder="Busque por aeroporto"
-                            required=""
+                            required="true"
                           />
                         </div>
                       </div>
@@ -81,7 +81,7 @@ export default function Home() {
                             id="trecho-de-volta"
                             list="lista-lugares"
                             placeholder="Busque por aeroporto"
-                            required=""
+                            required="true"
                           />
                         </div>
                       </div>
@@ -101,7 +101,7 @@ export default function Home() {
                             type="date"
                             aria-label="Ida"
                             id="data-ida"
-                            required=""
+                            required="true"
                           />
                         </div>
                       </div>
@@ -135,7 +135,7 @@ export default function Home() {
                         <select
                           className="form-control"
                           id="inlineFormCustomSelectPref"
-                          required=""
+                          required="true"
                         >
                           <option selected="">Escolha</option>
                           <option value={1}>1</option>
