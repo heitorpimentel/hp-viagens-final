@@ -1,10 +1,12 @@
 import React from 'react'
 import style from '@/styles/Footer.module.css'
+import {useRouter} from 'next/router'
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <>
-      <footer className={`${style.footer} py-3`}>
+      <footer className={`${style.footer} ${router.pathname === '/login' ? 'd-none' : ''} py-3`}>
         <div className="container">
           <div className="row">
             <div className="col-6 col-md-2 mb-3">
