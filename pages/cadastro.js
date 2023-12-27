@@ -3,10 +3,48 @@ import Head from 'next/head'
 import styles from '@/styles/Cadastro.module.css'
 
 export default function cadastro() {
+    function mostrarSenha(){
+        var senha = document.querySelector('#inputSenha')
+        if(senha.type === "password"){
+            senha.type = "text"
+        } else if (senha.type === "text"){
+            senha.type = "password";
+        }
+    }
+
+/* Autofocus */
     const autoF = useRef(null);
     useEffect(() =>{
     autoF.current.focus();
     }, []);
+    
+        /* Máscara de cpf */
+    const formataCPF = event => {
+        let input = event.target;
+        input.value = cpf(input.value);
+        };
+
+        const cpf = value => {
+        if (!value) return "";
+        value = value.replace(/\D/g, '');
+        value = value.replace(/(\d{3})(\d)/, "$1.$2");
+        value = value.replace(/(\d{3})(\d)/, "$1.$2");
+        value = value.replace(/(\d{3})(\d{2})$/, "$1-$2");
+        return value;
+        };
+        /* Máscara de telefone */
+        const formataTEL = event => {
+        let input = event.target;
+        input.value = telefone(input.value);
+        };
+    
+        const telefone = value => {
+        if (!value) return "";
+        value = value.replace(/\D/g, '');
+        value = value.replace(/(\d{2})(\d)/, "($1) $2");
+        value = value.replace(/(\d)(\d{4})$/, "$1-$2");
+        return value;
+        };
     return (
         <>
             <Head>
@@ -94,7 +132,7 @@ export default function cadastro() {
                                         id="inputCpf"
                                         name="cpf"
                                         placeholder="000.000.000-00"
-                                        onkeyup="formataCPF(event)"
+                                        onChange={formataCPF}
                                         minLength={14}
                                         maxLength={14}
                                         required="true"
@@ -130,7 +168,7 @@ export default function cadastro() {
                                             className="col-1 form-check-input"
                                             type="checkbox"
                                             id="verSenha"
-                                            onclick="mostrarSenha()"
+                                            onClick={mostrarSenha}
                                         />
                                         <label className="col form-check-label" htmlFor="verSenha">
                                             Mostrar senha
@@ -156,7 +194,7 @@ export default function cadastro() {
                                             className="form-control"
                                             id="inputTel"
                                             placeholder="(xx) xxxxx-xxxx"
-                                            onkeyup="formataTEL(event)"
+                                            onChange={formataTEL}
                                             minLength={14}
                                             maxLength={15}
                                             required="true"

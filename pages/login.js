@@ -1,8 +1,21 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 import Head from 'next/head'
 import styles from '@/styles/Login.module.css'
 
 export default function login() {
+    function mostrarSenha(){
+        var senha = document.querySelector('#inputSenha')
+        if(senha.type === "password"){
+            senha.type = "text"
+        } else if (senha.type === "text"){
+            senha.type = "password";
+        }
+    }
+    /* Autofocus */
+    const autoF = useRef(null);
+    useEffect(() =>{
+    autoF.current.focus();
+    }, []);
     return (
         <>
             <Head>
@@ -40,6 +53,7 @@ export default function login() {
                                     autoComplete="username"
                                     size={12}
                                     placeholder="Seu e-mail"
+                                    autoFocus ref={autoF}
                                 />
                             </p>
                             <p className={`${styles.p} ${styles.emailSenha} my-1`}>
@@ -63,7 +77,7 @@ export default function login() {
                                     className='col-1 form-check-input'
                                     type="checkbox"
                                     id="verSenha"
-                                    onclick="mostrarSenha()"
+                                    onClick={mostrarSenha}
                                 />
                                 <label className="col form-check-label" htmlFor="verSenha">
                                     Mostrar senha
