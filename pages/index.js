@@ -1,34 +1,34 @@
+import { useState, useEffect } from 'react';
 import Head from 'next/head'
 import Slides from '@/components/Slides'
 import styles from '@/styles/Home.module.css'
 import Cards from '@/components/Cards'
 
 export default function Home() {
-  function esconderData(){
-    const soIdaRadio = document.getElementById('soIda');
-    const idaVoltaRadio = document.getElementById('idaVolta')
-    const divDataVolta = document.getElementById('dataDeVolta');
-    const divDataIda = document.getElementById('dataDeIda')
+  const [esconderData, setEsconderData] = useState(false);
 
-    soIdaRadio.addEventListener('change', () => {
-        if (soIdaRadio.checked) {
-            divDataVolta.style.display = 'none';
-            divDataIda.classList.remove('col-md-2')
-            divDataIda.classList.remove('col-sm-6')
-            divDataIda.classList.add('col-md-4')
-            divDataIda.classList.add('col-sm-12')
-        }
-    });                    
-    idaVoltaRadio.addEventListener('change', () => {
-        if (idaVoltaRadio.checked) {
-            divDataVolta.style.display = 'block';
-            divDataIda.classList.remove('col-md-4')
-            divDataIda.classList.remove('col-sm-12')
-            divDataIda.classList.add('col-md-2')
-            divDataIda.classList.add('col-sm-6')
-        }
-    });
-  }
+  useEffect(() => {
+    const divDataVolta = document.getElementById('dataDeVolta');
+    const divDataIda = document.getElementById('dataDeIda');
+
+    if (esconderData) {
+      divDataVolta.style.display = 'none';
+      divDataIda.classList.remove('col-md-2', 'col-sm-6');
+      divDataIda.classList.add('col-md-4', 'col-sm-12');
+    } else {
+      divDataVolta.style.display = 'block';
+      divDataIda.classList.remove('col-md-4', 'col-sm-12');
+      divDataIda.classList.add('col-md-2', 'col-sm-6');
+    }
+  }, [esconderData]);
+
+  const datas = (event) => {
+    if (event.target.id === 'soIda') {
+      setEsconderData(true);
+    } else {
+      setEsconderData(false);
+    }
+  };
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function Home() {
                         id="idaVolta"
                         name="inputData"
                         className="custom-control-input"
-                        onClick={esconderData}
+                        onClick={(event) => datas(event)}
                         defaultChecked="checked"
                       />
                       <label className="custom-control-label" htmlFor="idaVolta">
@@ -62,7 +62,7 @@ export default function Home() {
                         id="soIda"
                         name="inputData"
                         className="custom-control-input"
-                        onclick="esconderData()"
+                        onClick={(event) => datas(event)}
                       />
                       <label className="custom-control-label" htmlFor="soIda">
                         Somente Ida
