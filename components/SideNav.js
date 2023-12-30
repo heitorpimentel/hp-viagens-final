@@ -45,7 +45,7 @@ export default function SideNav() {
                                     <span className={`${styles.icon}`}>
                                         <i className="bi bi-people-fill" />
                                     </span>
-                                    <span className={`${styles.title}`}>Alunos</span>
+                                    <span className={`${styles.title}`}>Clientes</span>
                                     <span
                                         id="seta1"
                                         className={`${styles.icon} ${styles.seta} ${styles.title} d-inline-flex`}
@@ -66,8 +66,8 @@ export default function SideNav() {
                                     className="accordion-collapse collapse"
                                     data-bs-parent="#accordionExample"
                                 >
-                                    <a className={`${styles.a}`} href="#"></a>
-                                    <a className={`${styles.a}`} href="/">
+                                    
+                                    <a className={`${styles.a}`} href="/adm">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-list-ul" /></span>
                                         <span className={`${styles.title}`}>Listar</span>
@@ -83,9 +83,9 @@ export default function SideNav() {
                             <li className={`${styles.li}`}>
                                 <a className={`${styles.a}`} href="#">
                                     <span className={`${styles.icon}`}>
-                                        <i className="bi bi-people-fill" />
+                                        <i className="bi bi-calendar-check" />
                                     </span>
-                                    <span className={`${styles.title}`}>Alunos</span>
+                                    <span className={`${styles.title}`}>Reservas</span>
                                     <span
                                         id="seta2"
                                         className={`${styles.icon} ${styles.seta} ${styles.title} d-inline-flex`}
@@ -106,8 +106,8 @@ export default function SideNav() {
                                     className="accordion-collapse collapse"
                                     data-bs-parent="#accordionExample"
                                 >
-                                    <a className={`${styles.a}`} href="#"></a>
-                                    <a className={`${styles.a}`} href="/">
+                                    
+                                    <a className={`${styles.a}`} href="/adm/reserva">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-list-ul" />
                                         </span>
@@ -124,9 +124,9 @@ export default function SideNav() {
                             <li className={`${styles.li}`}>
                                 <a className={`${styles.a}`} href="#">
                                     <span className={`${styles.icon}`}>
-                                        <i className="bi bi-people-fill" />
+                                        <i className="bi bi-airplane-engines" />
                                     </span>
-                                    <span className={`${styles.title}`}>Alunos</span>
+                                    <span className={`${styles.title}`}>Viagens</span>
                                     <span
                                         id="seta3"
                                         className={`${styles.icon} ${styles.seta} ${styles.title} d-inline-flex`}
@@ -147,8 +147,8 @@ export default function SideNav() {
                                     className="accordion-collapse collapse"
                                     data-bs-parent="#accordionExample"
                                 >
-                                    <a className={`${styles.a}`} href="#"></a>
-                                    <a className={`${styles.a}`} href="/">
+                                    
+                                    <a className={`${styles.a}`} href="/adm/viagem">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-list-ul" />
                                         </span>
@@ -165,9 +165,9 @@ export default function SideNav() {
                             <li className={`${styles.li}`}>
                                 <a className={`${styles.a}`} href="#">
                                     <span className={`${styles.icon}`}>
-                                        <i className="bi bi-people-fill" />
+                                        <i className="bi bi-coin" />
                                     </span>
-                                    <span className={`${styles.title}`}>Alunos</span>
+                                    <span className={`${styles.title}`}>Pagamentos</span>
                                     <span
                                         id="seta4"
                                         className={`${styles.icon} ${styles.seta} ${styles.title} d-inline-flex`}
@@ -188,8 +188,8 @@ export default function SideNav() {
                                     className="accordion-collapse collapse"
                                     data-bs-parent="#accordionExample"
                                 >
-                                    <a className={`${styles.a}`} href="#"></a>
-                                    <a className={`${styles.a}`} href="/">
+                                    
+                                    <a className={`${styles.a}`} href="/adm/pagamento">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-list-ul" />
                                         </span>
