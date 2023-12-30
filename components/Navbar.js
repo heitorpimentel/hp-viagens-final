@@ -7,7 +7,7 @@ export default function Navbar() {
     const router = useRouter();
     return (
         <>
-            <nav className={` ${style.naveg} navbar navbar-expand-md navbar-dark p-0 sticky-top `}>
+            <nav className={` ${style.naveg} navbar navbar-expand-md navbar-dark p-0 sticky-top ${router.pathname === '/adm' || '/adm/reserva' || '/adm/pagamento' || '/adm/viagem' ? 'd-none' : ''}`}>
                 <div className="container">
                     <a className={` ${style.navbarBrand} navbar-brand pl-2`} href="#">
                         <div className="imagem-nav">

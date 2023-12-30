@@ -1,0 +1,126 @@
+
+.iconNav{
+    position: fixed;
+    text-align: center;
+}
+
+.navigation {
+  position: fixed;
+  width: 60px;
+  height: calc(100% - 50px);
+  bottom: 0;
+  background: #37517e;
+  transition: 0.5s;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.navigation::-webkit-scrollbar {
+  width: 10px;
+}
+
+.navigation::-webkit-scrollbar-thumb {
+  background-color: #4287d2;
+  border-radius: 10px;
+}
+
+.navigation::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3;
+}
+
+.navigation.active,
+.navigation:hover {
+  width: 280px;
+}
+
+.navigation .ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-left: 0;
+}
+
+.li .item {
+  margin-left: 4rem;
+}
+
+.navigation .ul .li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+}
+
+.navigation .ul .li:hover {
+  background: #5278bbd4;
+}
+
+.navigation .ul .li .a:hover {
+  background-color: #4569a8;
+}
+
+.navigation .ul .li .a {
+  position: relative;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+.navigation .ul .li .a .icon {
+  position: relative;
+  display: block;
+  color: white;
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.navigation .ul .li .a .icon {
+  font-size: 24px;
+}
+
+.navigation .ul .li .a .title {
+  position: relative;
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+  white-space: nowrap;
+}
+
+.toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 35px;
+  width: 60px;
+  height: 60px;
+  background: #37517e;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle.active {
+  background: #5279bb;
+}
+.giro {
+transform: rotate(-90deg);
+}
+.seta{
+display: flex;
+justify-content: center;
+align-content: center;
+margin-right: -50px;
+}
+.title{
+width: calc(100% - 60px);
+}
+

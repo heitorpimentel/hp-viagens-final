@@ -1,0 +1,23 @@
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+}
+.h1{
+  text-align: center;
+}
+.body{
+  background-color: white;
+  height: 100%;
+  width: calc(100% - 60px);
+  margin-left: 60px;
+}
+.tabela{
+  background-color: black;
+  color: aliceblue;
+}
+.conteudo{
+  width: calc(100% - 60px);
+  margin: auto;
+}
