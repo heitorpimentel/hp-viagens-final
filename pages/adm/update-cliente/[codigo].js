@@ -10,19 +10,19 @@ export default function UpdateCliente() {
     const { codigo } = router.query;
 
     useEffect(() => {
-        axios
-            .get("http://localhost:8080/cliente/" + client.id)
-            .then((response) => {
-                setClient(response.data);
-            })
-            .catch((error) => {
-                console.error("Erro ao buscar detalhes do cliente:", error);
-            });
-    }, [client.id]);
+            axios
+                .get(`http://localhost:8080/cliente/${client.id}`)
+                .then((response) => {
+                    setClient(response.data);
+                })
+                .catch((error) => {
+                    console.error("Erro ao buscar detalhes do cliente:", error);
+                });
+    }, [codigo]);
 
     const handleInputChange = (e) => {
         setClient({ ...client, [e.target.name]: e.target.value });
-    };
+      };
 
     const handleUpdateClient = () => {
         axios

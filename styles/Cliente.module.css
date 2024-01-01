@@ -6,6 +6,7 @@
 }
 .h1{
   text-align: center;
+  padding: 20px 0;
 }
 .body{
   background-color: white;
@@ -20,4 +21,5 @@
 .conteudo{
   width: calc(100% - 60px);
   margin: auto;
+  padding: 0 0 50px 0;
 }
