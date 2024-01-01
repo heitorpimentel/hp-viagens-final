@@ -1,13 +1,14 @@
 
 .iconNav{
     position: fixed;
+    left: 0;
     text-align: center;
 }
 
 .navigation {
   position: fixed;
   width: 60px;
-  height: calc(100% - 50px);
+  height: 100%;
   bottom: 0;
   background: #37517e;
   transition: 0.5s;

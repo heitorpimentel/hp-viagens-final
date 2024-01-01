@@ -3,13 +3,9 @@ import Head from 'next/head'
 import styles from '@/styles/Cadastro.module.css'
 
 export default function cadastro() {
-    function mostrarSenha(){
+    function mostrarSenha() {
         var senha = document.querySelector('#inputSenha')
-        if(senha.type === "password"){
-            senha.type = "text"
-        } else if (senha.type === "text"){
-            senha.type = "password";
-        }
+        senha.type === "password" ? senha.type = 'text' : senha.type = 'password'
     }
 
 /* Autofocus */

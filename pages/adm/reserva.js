@@ -21,24 +21,24 @@ export default function reserva() {
     return (
         <div className={style.body}>
             <SideNav />
-            <h1 className={style.h1}>Lista de Clientes</h1>
-                <div className={`${style.conteudo} container table-responsive`}>
-                <table className={`mx-3 m-auto table table-hover table-striped text-nowrap`}>
+            <h1 className={style.h1}>Lista de Reservas</h1>
+                <div className={`${style.conteudo} container table-hover table-responsive`}>
+                <table className={`mx-3 m-auto table table-striped text-nowrap`}>
                     <thead>
                         <tr className={`${style.tabela} text-center`}>
                             <th>Id</th>
-                            <th>Data da reserva</th>
+                            <th>Data da Reserva</th>
                             <th>Nome do Cliente</th>
                             <th>CPF</th>
                             <th>Origem</th>
                             <th>Destino</th>
                             <th>Valor</th>
-                            <th>Ações</th> {/* Adicione uma coluna para as ações de edição e exclusão */}
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     {reservas.map((element) => (
-                        <tbody key={element.id}>
-                            <tr className='text-nowrap text-center' >
+                        <tbody key={element.id} className='text-nowrap text-center' >
+                            <tr  >
                                 <td>{element.id}</td>
                                 <td>{element.dataReserva}</td>
                                 <td>{element.cliente.nome}</td>

@@ -24,10 +24,10 @@ export default function SideNav() {
     return (
         <>
             <div>
+                <div className={`${styles.navigation} fixed-bottom`} style={{ width: larguraNavigation }}>
                 <div className={`${styles.toggle} ${styles.iconNav} ${styles.navigation}  fixed-top`} onClick={toggleMenu} style={{ width: larguraNavigation }}>
                     <i className="bi bi-list text-center text-white " />
                 </div>
-                <div className={`${styles.navigation} fixed-bottom`} style={{ width: larguraNavigation }}>
                     <ul className={`${styles.ul}`}>
                         <li className={`${styles.li}`}>
                             <a className={`${styles.a}`} href="/adm">
@@ -72,7 +72,7 @@ export default function SideNav() {
                                             <i className="bi bi-list-ul" /></span>
                                         <span className={`${styles.title}`}>Listar</span>
                                     </a>
-                                    <a className={`${styles.a}`} href="/">
+                                    <a className={`${styles.a}`} href="/adm/add-cli">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-pencil-square" />
                                         </span>
@@ -113,7 +113,7 @@ export default function SideNav() {
                                         </span>
                                         <span className={`${styles.title}`}>Listar</span>
                                     </a>
-                                    <a className={`${styles.a}`} href="/">
+                                    <a className={`${styles.a}`} href="/adm/add-res">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-pencil-square" />
                                         </span>
@@ -154,7 +154,7 @@ export default function SideNav() {
                                         </span>
                                         <span className={`${styles.title}`}>Listar</span>
                                     </a>
-                                    <a className={`${styles.a}`} href="/">
+                                    <a className={`${styles.a}`} href="/adm/add-vi">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-pencil-square" />
                                         </span>
@@ -195,7 +195,7 @@ export default function SideNav() {
                                         </span>
                                         <span className={`${styles.title}`}>Listar</span>
                                     </a>
-                                    <a className={`${styles.a}`} href="/">
+                                    <a className={`${styles.a}`} href="/adm/add-pag">
                                         <span className={`${styles.icon} ${styles.item}`}>
                                             <i className="bi bi-pencil-square" />
                                         </span>
