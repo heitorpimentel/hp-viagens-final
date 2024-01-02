@@ -3,6 +3,8 @@ import axios from "axios";
 import Link from 'next/link';
 import style from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 export default function viagem() {
     const [viagem, setViagem] = useState([]);
@@ -18,6 +20,27 @@ export default function viagem() {
           console.error("Erro ao buscar a lista de viagens:", error);
         });
     }, []);
+
+    const handleDeleteViagem = (viagemId) => {
+        if (window.confirm('Tem certeza que deseja excluir esta viagem nº ' + viagemId + '?')) {
+            axios
+                .delete(`http://localhost:8080/viagem/${viagemId}`)
+                .then(() => {
+                    // Atualiza a lista de clientes após a exclusão bem-sucedida (opcional)
+                    axios.get("http://localhost:8080/viagem")
+                        .then((response) => {
+                            setViagem(response.data);
+                            router.push("/adm/viagem"); // Redireciona após a exclusão bem-sucedida
+                        })
+                        .catch((error) => {
+                            console.error("Erro ao buscar a lista de viagens:", error);
+                        });
+                })
+                .catch((error) => {
+                    alert("Erro ao excluir viagem: " + error);
+                });
+        }
+    };
     return (
         <div className={style.body}>
             <SideNav />
@@ -31,7 +54,7 @@ export default function viagem() {
                             <th>Destino</th>
                             <th>Data de Ida</th>
                             <th>Data de Volta</th>
-                            <th>Ações</th> {/* Adicione uma coluna para as ações de edição e exclusão */}
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     {viagem.map((element) => (
@@ -40,11 +63,13 @@ export default function viagem() {
                                 <td>{element.id}</td>
                                 <td>{element.origem}</td>
                                 <td>{element.destino}</td>
-                                <td>{element.dataIda}</td>
-                                <td>{element.dataVolta}</td>
+                                <td>{format(new Date(element.dataIda + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
+                                <td>{format(new Date(element.dataVolta  === null ? '-' : element.dataVolta + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
                                 <td>
-                                    <Link href={`/update-client/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
-                                    <Link href={`/delete-client/${element.id}`} className="btn btn btn-danger"> <i class="bi bi-trash"></i></Link>
+                                    <Link href={`/adm/update-viagem/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
+                                    <Link href={`/adm/viagem`} className="btn btn btn-danger"
+                                    onClick={() => handleDeleteViagem(element.id)}
+                                    ><i class="bi bi-trash"></i></Link>
                                 </td>
                             </tr>
                         </tbody>

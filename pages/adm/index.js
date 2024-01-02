@@ -26,7 +26,7 @@ export default function index() {
             axios
                 .delete(`http://localhost:8080/cliente/${clientId}`)
                 .then(() => {
-                    // Atualiza a lista de clientes após a exclusão bem-sucedida (opcional)
+                    // Atualiza a lista de clientes após a exclusão bem-sucedida
                     axios.get("http://localhost:8080/cliente")
                         .then((response) => {
                             setClients(response.data);

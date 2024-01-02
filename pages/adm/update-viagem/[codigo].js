@@ -1,33 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
 
-export default function addVi() {
-  const [newViagem, setNewViagem] = useState({ origem: "", destino: "", dataIda: "", dataVolta: ""});
-  const router = useRouter();
+export default function UpdateViagem() {
+    const [viagem, setViagem] = useState({ id:"", origem: "", destino: "", dataIda: "", dataVolta: "" });
+    const router = useRouter();
+    const { codigo } = router.query;
 
-  const handleInputChange = (e) => {
-      setNewViagem({ ...newViagem, [e.target.name]: e.target.value });
+    useEffect(() => {
+        axios
+            .get(`http://localhost:8080/viagem/${viagem.id}`)
+            .then((response) => {
+                setViagem(response.data);
+            })
+            .catch((error) => {
+                console.error("Erro ao buscar detalhes da viagem:", error);
+            });
+}, [codigo]);
+
+const handleInputChange = (e) => {
+    setViagem({ ...viagem, [e.target.name]: e.target.value });
   };
 
-  const handleAddViagem = () => {
-      axios
-          .post("http://localhost:8080/viagem/salvarViagem", newViagem)
-          .then((response) => {
-              router.push("/adm/viagem");
-          })
-          .catch((error) => {
-              alert("Erro ao inserir viagem:" + error);
-          });
+const handleUpdateViagem = () => {
+    axios
+        .put("http://localhost:8080/viagem/" + viagem.id, viagem)
+        .then((response) => {
+            router.push('/adm/viagem');
 
-  };
-  return (
-    <>
-            <main className={styles.body}>
+        })
+        .catch((error) => {
+            console.error("Erro ao atualizar viagem:", error);
+        });
+};
+
+    return (
+        <>
+        <main className={styles.body}>
                 <SideNav />
-                <h1 className={`${styles.h1}`}>Cadastro de Viagem</h1>
+                <h1 className={`${styles.h1}`}>Atualizar Viagem para: {viagem.destino}</h1>
                 <div className={`${styles.conteudo} row py-5 container`}>
                     <div className="col-sm-12">
                         <div className="card">
@@ -41,14 +54,21 @@ export default function addVi() {
                                         <div className="row my-2">
                                             <div className="col-md-6 col-sm-12">
                                                 <div className="form-group">
-                                                    <label htmlFor="origem">Origem</label>
+                                                    <label htmlFor="orige">Origem</label>
                                                     <input
-                                                        id='origem'
+                                                        type="hidden"
+                                                        name="id"
+                                                        value={viagem.id = codigo}
+                                                        onChange={handleInputChange}
+                                                    />
+
+                                                    <input
+                                                        id='orige'
                                                         type="text"
                                                         className="form-control"
                                                         placeholder="Origem"
                                                         name="origem"
-                                                        value={newViagem.origem}
+                                                        value={viagem.origem}
                                                         onChange={handleInputChange}
                                                     />
                                                 </div>
@@ -63,7 +83,7 @@ export default function addVi() {
                                                         id="destino"
                                                         name="destino"
                                                         required={true}
-                                                        value={newViagem.destino}
+                                                        value={viagem.destino}
                                                         onChange={handleInputChange}
                                                     />
                                                 </div>
@@ -79,7 +99,7 @@ export default function addVi() {
                                                         className="form-control"
                                                         required={true}
                                                         name="dataIda"
-                                                        value={newViagem.dataIda}
+                                                        value={viagem.dataIda}
                                                         onChange={handleInputChange}
                                                     />
                                                 </div>
@@ -93,7 +113,7 @@ export default function addVi() {
                                                         type="date"
                                                         className="form-control"
                                                         name="dataVolta"
-                                                        value={newViagem.dataVolta}
+                                                        value={viagem.dataVolta}
                                                         onChange={handleInputChange}
                                                     />
                                                 </div>
@@ -102,7 +122,7 @@ export default function addVi() {
                                     </fieldset>
                                 </div>
                                 <div className="mx-3 py-2">
-                                    <button onClick={handleAddViagem} type="submit" className="btn btn-primary">
+                                    <button onClick={handleUpdateViagem} type="submit" className="btn btn-primary">
                                         Salvar
                                     </button>
                                 </div>
@@ -111,7 +131,6 @@ export default function addVi() {
                     </div>
                 </div>
             </main>
-
         </>
-  )
+    )
 }

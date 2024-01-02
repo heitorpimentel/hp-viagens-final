@@ -3,6 +3,8 @@ import axios from "axios";
 import Link from 'next/link';
 import style from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 export default function pagamento() {
     const [pagamentos, setPagamentos] = useState([]);
@@ -18,6 +20,27 @@ export default function pagamento() {
           console.error("Erro ao buscar a lista de pagamentos:", error);
         });
     }, []);
+
+    const handleDeletePagamento = (pagamentoId) => {
+        if (window.confirm('Tem certeza que deseja excluir esta pagamento nº ' + pagamentoId + '?')) {
+            axios
+                .delete(`http://localhost:8080/pagamento/${pagamentoId}`)
+                .then(() => {
+                    // Atualiza a lista de clientes após a exclusão bem-sucedida (opcional)
+                    axios.get("http://localhost:8080/pagamento")
+                        .then((response) => {
+                            setPagamentos(response.data);
+                            router.push("/adm/pagamento"); // Redireciona após a exclusão bem-sucedida
+                        })
+                        .catch((error) => {
+                            console.error("Erro ao buscar a lista de pagamentos:", error);
+                        });
+                })
+                .catch((error) => {
+                    alert("Erro ao excluir pagamento: " + error);
+                });
+        }
+    };
     return (
         <div className={style.body}>
             <SideNav />
@@ -39,12 +62,14 @@ export default function pagamento() {
                             <tr className='text-nowrap text-center' >
                                 <td>{element.id}</td>
                                 <td>{element.valorPag}</td>
-                                <td>{element.dataPagamento}</td>
+                                <td>{format(new Date(element.dataPagamento + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
                                 <td>{element.formaPag}</td>
                                 <td>{element.parcela}</td>
                                 <td>
                                     <Link href={`/update-client/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
-                                    <Link href={`/delete-client/${element.id}`} className="btn btn btn-danger"> <i class="bi bi-trash"></i></Link>
+                                    <Link href={`/adm/pagamento`} className="btn btn btn-danger"
+                                    onClick={() => handleDeletePagamento(element.id)}
+                                    ><i class="bi bi-trash"></i></Link>
                                 </td>
                             </tr>
                         </tbody>
