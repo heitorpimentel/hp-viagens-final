@@ -66,7 +66,7 @@ export default function pagamento() {
                                 <td>{element.formaPag}</td>
                                 <td>{element.parcela}</td>
                                 <td>
-                                    <Link href={`/update-client/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
+                                    <Link href={`/adm/update-pagamento/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
                                     <Link href={`/adm/pagamento`} className="btn btn btn-danger"
                                     onClick={() => handleDeletePagamento(element.id)}
                                     ><i class="bi bi-trash"></i></Link>

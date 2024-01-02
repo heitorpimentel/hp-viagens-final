@@ -43,7 +43,7 @@ export default function addPag() {
                         <div className="form-group">
                           <label htmlFor="valorPag">Valor do pagamento</label>
                           <input
-                            id='origem'
+                            id='valorPag'
                             type="number"
                             className="form-control"
                             placeholder="Digite o valor"
