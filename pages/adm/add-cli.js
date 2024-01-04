@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
+import Head from 'next/head'
 
 export default function addCli() {
     const [newClient, setNewClient] = useState({ nome: "", cpf: "", dataNascimento: "", sexo: "", telefone: "", email: "", senha: "" });
@@ -28,16 +29,16 @@ export default function addCli() {
     const formataCPF = event => {
         let input = event.target;
         input.value = cpf(input.value);
-      };
-      
-      const cpf = value => {
+    };
+
+    const cpf = value => {
         if (!value) return "";
         value = value.replace(/\D/g, '');
         value = value.replace(/(\d{3})(\d)/, "$1.$2");
         value = value.replace(/(\d{3})(\d)/, "$1.$2");
         value = value.replace(/(\d{3})(\d{1,2})$/, "$1-$2"); // Adiciona o traço nos últimos dígitos
         return value;
-      };
+    };
     /* Máscara de telefone */
     const formataTEL = event => {
         let input = event.target;
@@ -58,6 +59,9 @@ export default function addCli() {
     }
     return (
         <>
+            <Head>
+                <title>ADM - Cadastro de clientes</title>
+            </Head>
             <main className={styles.body}>
                 <SideNav />
                 <h1 className={`${styles.h1}`}>Cadastro de Cliente</h1>

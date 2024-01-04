@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
+import Head from 'next/head'
 
 export default function addPag() {
   const [newPagamento, setNewPagamento] = useState({ valorPag: "", dataPagamento: "", formaPag: "", parcela: "" });
@@ -25,6 +26,9 @@ export default function addPag() {
   };
   return (
     <>
+      <Head>
+        <title>ADM - Cadastro de pagamentos</title>
+      </Head>
       <main className={styles.body}>
         <SideNav />
         <h1 className={`${styles.h1}`}>Cadastro de Pagamento</h1>
@@ -74,10 +78,10 @@ export default function addPag() {
                         <div className="form-group">
                           <label htmlFor="formaPag">Forma de Pagamento</label>
                           <select id='formaPag' name='formaPag' required={true} value={newPagamento.formaPag} onChange={handleInputChange} className="form-select form-control w-100">
-                            <option value ='À vista'>À vista</option>
-                            <option value ='Cartão'>Cartão</option>
-                            <option value ='Pix'>Pix</option>
-                            <option value ='Boleto'>Boleto</option>
+                            <option value='À vista'>À vista</option>
+                            <option value='Cartão'>Cartão</option>
+                            <option value='Pix'>Pix</option>
+                            <option value='Boleto'>Boleto</option>
                           </select>
                         </div>
                       </div>
@@ -86,18 +90,18 @@ export default function addPag() {
                         <div className="form-group ">
                           <label htmlFor="parcela">Quantidade de parcelas</label>
                           <select id='parcela' name='parcela' required={true} value={newPagamento.parcela} onChange={handleInputChange} className="form-select form-control w-100">
-                            <option value= '1'>1x</option>
-                            <option value= '2'>2x</option>
-                            <option value= '3'>3x</option>
-                            <option value= '4'>4x</option>
-                            <option value= '5'>5x</option>
-                            <option value= '6'>6x</option>
-                            <option value= '7'>7x</option>
-                            <option value= '8'>8x</option>
-                            <option value= '9'>9x</option>
-                            <option value= '10'>10x</option>
-                            <option value= '11'>11x</option>
-                            <option value= '12'>12x</option>
+                            <option value='1'>1x</option>
+                            <option value='2'>2x</option>
+                            <option value='3'>3x</option>
+                            <option value='4'>4x</option>
+                            <option value='5'>5x</option>
+                            <option value='6'>6x</option>
+                            <option value='7'>7x</option>
+                            <option value='8'>8x</option>
+                            <option value='9'>9x</option>
+                            <option value='10'>10x</option>
+                            <option value='11'>11x</option>
+                            <option value='12'>12x</option>
                           </select>
                         </div>
                       </div>

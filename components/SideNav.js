@@ -25,12 +25,12 @@ export default function SideNav() {
         <>
             <div>
                 <div className={`${styles.navigation} fixed-bottom`} style={{ width: larguraNavigation }}>
-                <div className={`${styles.toggle} ${styles.iconNav} ${styles.navigation}  fixed-top`} onClick={toggleMenu} style={{ width: larguraNavigation }}>
+                <div className={`${styles.toggle} ${styles.iconNav} ${styles.navigation}  fixed-top pl-2`} onClick={toggleMenu} style={{ width: larguraNavigation }}>
                     <i className="bi bi-list text-center text-white " />
                 </div>
                     <ul className={`${styles.ul}`}>
                         <li className={`${styles.li}`}>
-                            <a className={`${styles.a}`} href="/adm">
+                            <a className={`${styles.a}  mt-3 pt-5`} href="/adm">
                                 <span className={`${styles.icon}`}>
                                     <i className="bi bi-house-door" />
                                 </span>

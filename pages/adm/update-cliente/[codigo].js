@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
-import styles from '@/styles/Cliente.module.css'
+import styles from '@/styles/Cliente.module.css';
 import SideNav from '@/components/SideNav';
+import Head from 'next/head';
 
 export default function UpdateCliente() {
     const [client, setClient] = useState({ id: "", nome: "", cpf: "", dataNascimento: "", sexo: "", telefone: "", email: "", senha: "" });
@@ -10,19 +11,19 @@ export default function UpdateCliente() {
     const { codigo } = router.query;
 
     useEffect(() => {
-            axios
-                .get(`http://localhost:8080/cliente/${client.id}`)
-                .then((response) => {
-                    setClient(response.data);
-                })
-                .catch((error) => {
-                    console.error("Erro ao buscar detalhes do cliente:", error);
-                });
+        axios
+            .get(`http://localhost:8080/cliente/${client.id}`)
+            .then((response) => {
+                setClient(response.data);
+            })
+            .catch((error) => {
+                console.error("Erro ao buscar detalhes do cliente:", error);
+            });
     }, [codigo]);
 
     const handleInputChange = (e) => {
         setClient({ ...client, [e.target.name]: e.target.value });
-      };
+    };
 
     const handleUpdateClient = () => {
         axios
@@ -56,6 +57,9 @@ export default function UpdateCliente() {
     }
     return (
         <>
+            <Head>
+                <title>ADM - Atualização de clientes</title>
+            </Head>
             <main className={styles.body}>
                 <SideNav />
                 <h1 className={`${styles.h1}`}>Atualizar Cliente: {client.nome}</h1>

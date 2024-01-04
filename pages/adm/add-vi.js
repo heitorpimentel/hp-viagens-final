@@ -3,28 +3,32 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
+import Head from 'next/head'
 
 export default function addVi() {
-  const [newViagem, setNewViagem] = useState({ origem: "", destino: "", dataIda: "", dataVolta: ""});
-  const router = useRouter();
+    const [newViagem, setNewViagem] = useState({ origem: "", destino: "", dataIda: "", dataVolta: "" });
+    const router = useRouter();
 
-  const handleInputChange = (e) => {
-      setNewViagem({ ...newViagem, [e.target.name]: e.target.value });
-  };
+    const handleInputChange = (e) => {
+        setNewViagem({ ...newViagem, [e.target.name]: e.target.value });
+    };
 
-  const handleAddViagem = () => {
-      axios
-          .post("http://localhost:8080/viagem/salvarViagem", newViagem)
-          .then((response) => {
-              router.push("/adm/viagem");
-          })
-          .catch((error) => {
-              alert("Erro ao inserir viagem:" + error);
-          });
+    const handleAddViagem = () => {
+        axios
+            .post("http://localhost:8080/viagem/salvarViagem", newViagem)
+            .then((response) => {
+                router.push("/adm/viagem");
+            })
+            .catch((error) => {
+                alert("Erro ao inserir viagem:" + error);
+            });
 
-  };
-  return (
-    <>
+    };
+    return (
+        <>
+            <Head>
+                <title>ADM - Cadastro de viagens</title>
+            </Head>
             <main className={styles.body}>
                 <SideNav />
                 <h1 className={`${styles.h1}`}>Cadastro de Viagem</h1>
@@ -113,5 +117,5 @@ export default function addVi() {
             </main>
 
         </>
-  )
+    )
 }

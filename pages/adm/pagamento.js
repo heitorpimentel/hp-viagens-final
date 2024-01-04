@@ -5,6 +5,7 @@ import style from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import Head from 'next/head'
 
 export default function pagamento() {
     const [pagamentos, setPagamentos] = useState([]);
@@ -41,8 +42,17 @@ export default function pagamento() {
                 });
         }
     };
+    const formatarValorParaReal = (valor) => {
+        return parseFloat(valor).toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+        });
+    };
     return (
         <div className={style.body}>
+            <Head>
+                <title>ADM - Pagamentos</title>
+            </Head>
             <SideNav />
             <h1 className={style.h1}>Lista de Pagamentos</h1>
                 <div className={`${style.conteudo} container table-responsive`}>
@@ -61,10 +71,10 @@ export default function pagamento() {
                         <tbody key={element.id}>
                             <tr className='text-nowrap text-center' >
                                 <td>{element.id}</td>
-                                <td>{element.valorPag}</td>
+                                <td className='text-left'>{formatarValorParaReal(element.valorPag)}</td>
                                 <td>{format(new Date(element.dataPagamento + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
                                 <td>{element.formaPag}</td>
-                                <td>{element.parcela}</td>
+                                <td>{element.parcela}x</td>
                                 <td>
                                     <Link href={`/adm/update-pagamento/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
                                     <Link href={`/adm/pagamento`} className="btn btn btn-danger"

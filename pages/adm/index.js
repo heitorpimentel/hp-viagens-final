@@ -5,6 +5,7 @@ import style from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import Head from 'next/head'
 
 export default function index() {
     const [clients, setClients] = useState([]);
@@ -43,6 +44,9 @@ export default function index() {
     };
     return (
         <div className={style.body}>
+            <Head>
+                <title>ADM - Home</title>
+            </Head>
             <SideNav />
             <h1 className={style.h1}>Lista de Clientes</h1>
             <div className={`${style.conteudo} container table-responsive`}>
@@ -72,7 +76,7 @@ export default function index() {
                                 <td>
                                     <Link href={`/adm/update-cliente/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
                                     <Link href={`/adm`} className="btn btn btn-danger"
-                                    onClick={() => handleDeleteClient(element.id)}
+                                        onClick={() => handleDeleteClient(element.id)}
                                     ><i class="bi bi-trash"></i></Link>
                                 </td>
                             </tr>

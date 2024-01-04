@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
-import styles from '@/styles/Cliente.module.css'
+import styles from '@/styles/Cliente.module.css';
 import SideNav from '@/components/SideNav';
+import Head from 'next/head';
 
 export default function UpdateViagem() {
-    const [viagem, setViagem] = useState({ id:"", origem: "", destino: "", dataIda: "", dataVolta: "" });
+    const [viagem, setViagem] = useState({ id: "", origem: "", destino: "", dataIda: "", dataVolta: "" });
     const router = useRouter();
     const { codigo } = router.query;
 
@@ -18,27 +19,30 @@ export default function UpdateViagem() {
             .catch((error) => {
                 console.error("Erro ao buscar detalhes da viagem:", error);
             });
-}, [codigo]);
+    }, [codigo]);
 
-const handleInputChange = (e) => {
-    setViagem({ ...viagem, [e.target.name]: e.target.value });
-  };
+    const handleInputChange = (e) => {
+        setViagem({ ...viagem, [e.target.name]: e.target.value });
+    };
 
-const handleUpdateViagem = () => {
-    axios
-        .put("http://localhost:8080/viagem/" + viagem.id, viagem)
-        .then((response) => {
-            router.push('/adm/viagem');
+    const handleUpdateViagem = () => {
+        axios
+            .put("http://localhost:8080/viagem/" + viagem.id, viagem)
+            .then((response) => {
+                router.push('/adm/viagem');
 
-        })
-        .catch((error) => {
-            console.error("Erro ao atualizar viagem:", error);
-        });
-};
+            })
+            .catch((error) => {
+                console.error("Erro ao atualizar viagem:", error);
+            });
+    };
 
     return (
         <>
-        <main className={styles.body}>
+            <Head>
+                <title>ADM - Atualização de viagens</title>
+            </Head>
+            <main className={styles.body}>
                 <SideNav />
                 <h1 className={`${styles.h1}`}>Atualizar Viagem para: {viagem.destino}</h1>
                 <div className={`${styles.conteudo} row py-5 container`}>

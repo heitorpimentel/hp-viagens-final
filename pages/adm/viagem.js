@@ -5,6 +5,7 @@ import style from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import Head from 'next/head'
 
 export default function viagem() {
     const [viagem, setViagem] = useState([]);
@@ -43,6 +44,9 @@ export default function viagem() {
     };
     return (
         <div className={style.body}>
+            <Head>
+                <title>ADM - Viagens</title>
+            </Head>
             <SideNav />
             <h1 className={style.h1}>Lista de Viagens</h1>
                 <div className={`${style.conteudo} container table-responsive`}>

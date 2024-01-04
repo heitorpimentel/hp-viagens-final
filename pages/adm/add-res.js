@@ -1,8 +1,9 @@
-import React, {useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
+import Head from 'next/head'
 
 export default function addRes() {
   const [newReserva, setNewReserva] = useState({ dataReserva: "", clienteId: "", pagamentoId: "", viagemId: "" });
@@ -23,8 +24,10 @@ export default function addRes() {
       });
 
   };
-
-  const [cliente, setCliente] = useState([]); 
+  /* Dados para consulta de ID */
+  const [cliente, setCliente] = useState([]);
+  const [viagem, setViagem] = useState([]);
+  const [pagamento, setPagamento] = useState([]);
   useEffect(() => {
     axios
       .get("http://localhost:8080/cliente")
@@ -36,7 +39,6 @@ export default function addRes() {
       });
   }, []);
 
-  const [viagem, setViagem] = useState([]); 
   useEffect(() => {
     axios
       .get("http://localhost:8080/viagem")
@@ -48,7 +50,6 @@ export default function addRes() {
       });
   }, []);
 
-  const [pagamento, setPagamento] = useState([]); 
   useEffect(() => {
     axios
       .get("http://localhost:8080/pagamento")
@@ -61,6 +62,9 @@ export default function addRes() {
   }, []);
   return (
     <>
+      <Head>
+        <title>ADM - Cadastro de reservas</title>
+      </Head>
       <main className={styles.body}>
         <SideNav />
         <h1 className={`${styles.h1}`}>Cadastro de Reserva</h1>
@@ -71,10 +75,10 @@ export default function addRes() {
                 method='post'
                 action="/adm/reserva"
               >
-                
+
                 <div className="card-body">
                   <fieldset>
-                    <legend>Dados da pagamento</legend>
+                    <legend>Dados para Reserva</legend>
                     <div className="row my-2">
                       <div className="col-md-6 col-sm-12">
                         <div className="form-group">
@@ -92,41 +96,93 @@ export default function addRes() {
                       </div>
                       <div className="col-md-6 col-sm-12">
                         <div className="form-group">
-                          <label htmlFor="cliente">Selecione o cliente</label>
-                          <select id='cliente' name='clienteId' required={true} value={newReserva.clienteId} onChange={handleInputChange} className="form-select form-control w-100">
-                      {cliente.map((element) => (
-                            <option  key={element.id} value={element.id}>{element.id} - {element.nome}, cpf: {element.cpf}</option>
+                          <label htmlFor="cliente">Selecione o cliente para consulta de ID</label>
+                          <select
+                            id='cliente'
+
+                            className="form-select form-control w-100"
+                          >
+                            <option value={''}>--- Consultar Dados ---</option>
+                            {cliente.map((element) => (
+                              <option key={element.id} value={element.id}>
+                                {element.id} - {element.nome}, cpf: {element.cpf}
+                              </option>
                             ))}
                           </select>
+                          <label htmlFor="cli">Digite o ID do cliente</label>
+                          <input
+                            id='cli'
+                            type="number"
+                            className="form-control"
+                            placeholder="Digite o ID"
+                            name='clienteId'
+                            required={true}
+                            value={newReserva.clienteId}
+                            onChange={handleInputChange}
+                          />
                         </div>
                       </div>
                     </div>
                     <div className="row my-2">
                       <div className="col-md-6 col-sm-12">
                         <div className="form-group">
-                          <label htmlFor="viagem">Selecione a viagem</label>
-                          <select id='viagem' name='viagemId' required={true} value={newReserva.viagemId} onChange={handleInputChange} className="form-select form-control w-100">
-                          {viagem.map((element) => (
-                            <option key={element.id} value={element.id}>{element.id} - {element.origem} x {element.destino}</option>
-                          ))}
+                          <label htmlFor="viagem">Selecione a viagem para consulta de ID</label>
+                          <select
+                            id='viagem'
+                            className="form-select form-control w-100"
+                          >
+                            <option value={''}>--- Consultar Dados ---</option>
+                            {viagem.map((element) => (
+                              <option key={element.id} value={element.id}>
+                                {element.id} - {element.origem} x {element.destino}
+                              </option>
+                            ))}
                           </select>
+                          <label htmlFor="viag">Digite o ID da viagem</label>
+                          <input
+                            id='viag'
+                            type="number"
+                            className="form-control"
+                            placeholder="Digite o ID"
+                            name='viagemId'
+                            required={true}
+                            value={newReserva.viagemId}
+                            onChange={handleInputChange}
+                          />
                         </div>
                       </div>
 
                       <div className="col-md-6 col-sm-12">
                         <div className="form-group ">
-                          <label htmlFor="pag">Selecione o pagamento</label>
-                          <select id='pag' name='pagamentoId' required={true} value={newReserva.pagamentoId} onChange={handleInputChange} className="form-select form-control w-100">
-                          {pagamento.map((element) => (
-                            <option key={element.id} value={element.id}>{element.id} - {element.valorPag}</option>
-                          ))}
+                          <label htmlFor="pag">Selecione o pagamento para consulta de ID</label>
+                          <select
+                            id='pag'
+                            className="form-select form-control w-100"
+                          >
+                            <option value={''}>--- Consultar Dados ---</option>
+                            {pagamento.map((element) => (
+                              <option key={element.id} value={element.id}>
+                                {element.id} - {element.valorPag}
+                              </option>
+                            ))}
                           </select>
+                          <label htmlFor="pagID">Digite o ID do pagamento</label>
+                          <input
+                            id='pagID'
+                            type="number"
+                            className="form-control"
+                            placeholder="Digite o ID"
+                            name='pagamentoId'
+                            required={true}
+                            value={newReserva.pagamentoId}
+                            onChange={handleInputChange}
+                          />
                         </div>
                       </div>
                     </div>
                   </fieldset>
                 </div>
-                
+
                 <div className="mx-3 py-2">
                   <button onClick={handleAddReserva} type="submit" className="btn btn-primary">
                     Salvar

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
 import SideNav from '@/components/SideNav';
+import Head from 'next/head'
 
 export default function UpdatePagamento() {
     const [pagamento, setPagamento] = useState({ id: "", valorPag: "", dataPagamento: "", formaPag: "", parcela: "" });
@@ -38,6 +39,9 @@ export default function UpdatePagamento() {
 
     return (
         <>
+            <Head>
+                <title>ADM - Atualização de pagamentos</title>
+            </Head>
             <main className={styles.body}>
                 <SideNav />
                 <h1 className={`${styles.h1}`}>Atualizar pagamento nº: {pagamento.id}</h1>
