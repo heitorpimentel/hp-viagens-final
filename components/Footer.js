@@ -6,7 +6,7 @@ export default function Footer() {
   const router = useRouter();
   return (
     <>
-      <footer className={`${style.footer} ${router.pathname === '/login' ? 'd-none' : ''} ${router.pathname === '/adm' || '/adm/reserva' || '/adm/pagamento' || '/adm/viagem' ? 'd-none' : ''} py-3`}>
+      <footer className={`${style.footer} ${router.pathname === '/login' ? 'd-none' : ''} ${router.pathname === '/adm' || router.pathname === '/adm/reserva' || router.pathname === '/adm/pagamento' || router.pathname === '/adm/viagem' || router.pathname === '/adm/add-cli' || router.pathname === '/adm/add-pag' || router.pathname === '/adm/add-vi' || router.pathname === '/adm/add-res' || router.pathname === '/adm/update-cliente/[codigo]' || router.pathname === '/adm/update-viagem/[codigo]' || router.pathname === '/adm/update-pagamento/[codigo]' || router.pathname === '/adm/update-reserva/[codigo]' ? 'd-none' : ''} py-3`}>
         <div className="container">
           <div className="row">
             <div className="col-6 col-md-2 mb-3">
