@@ -1,8 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Inicio da aplicação
 
-## Getting Started
-
-First, run the development server:
+Primeiro inicie o servidor usando o comando:
 
 ```bash
 npm run dev
@@ -14,27 +12,25 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra no [http://localhost:3000](http://localhost:3000) com seu navegador para ver o funcionamento da aplicação.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Instruções gerais de uso da aplicação
+#### Quando abrir a página inicial, clique em login e entrar. Digite um email e senha ficticios para ter acesso a área administrativa.
+![image](https://github.com/heitorpimentel/hp-viagens-final/assets/130229709/94061f67-eaad-4a69-8612-11a320712aba)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+#### Após isso clique em entrar
+![image](https://github.com/heitorpimentel/hp-viagens-final/assets/130229709/9ee00c09-962f-4e1e-a87f-713679bfb31e)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+#### Ao entrar, você tera a lista de clientes logo de início  e poderá cadastrar um cliente. Para listar clientes e todas as demais funções terá que utilizar a [API C#](https://github.com/heitorpimentel/HpViagensApiCsharpe.git)
+![image](https://github.com/heitorpimentel/hp-viagens-final/assets/130229709/cda123f5-1545-4871-b5af-01e5a453a727)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+#### Então você cadastra um cliente utilizando a [API C#](https://github.com/heitorpimentel/HpViagensApiCsharpe.git)
+![image](https://github.com/heitorpimentel/hp-viagens-final/assets/130229709/52563256-dae9-4ffc-8c4e-4fdb8c73c4e2)
 
-## Learn More
+#### E terá acesso a listagem de Clientes
+![image](https://github.com/heitorpimentel/hp-viagens-final/assets/130229709/8ead80dc-9e50-4c4a-b792-74d7f6a883f4)
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
