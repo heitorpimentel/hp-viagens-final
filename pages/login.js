@@ -39,7 +39,7 @@ export default function login() {
                             <br /> Ainda não é nosso cliente? <a href="/cadastro">Cadastre-se</a>
                             &gt;
                         </p>
-                        <form method="post" autoComplete="on">
+                        <form method="post" autoComplete="on" action='/adm'>
                             <p className={`${styles.p} ${styles.emailSenha} m-0`}>
                                 <label htmlFor="iemail">
                                     <span className={` ${styles.span} material-symbols-rounded fundo-ico`}>login</span>
