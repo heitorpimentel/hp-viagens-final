@@ -12,9 +12,12 @@ export default function UpdateReserva() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/reserva/${reserva.id}`)
+            .get(`https://localhost:7240/api/Reservas/${reserva.id}`)
             .then((response) => {
-                setReserva(response.data);
+                setReserva({
+                    ...response.data,
+                    dataReserva: response.data.dataReserva.split('T')[0]
+                });
             })
             .catch((error) => {
                 console.error("Erro ao buscar detalhes da reserva:", error);
@@ -27,7 +30,7 @@ export default function UpdateReserva() {
 
     const handleUpdateReserva = () => {
         axios
-            .put("http://localhost:8080/reserva/" + reserva.id, reserva)
+            .put("https://localhost:7240/api/Reservas/" + reserva.id, reserva)
             .then((response) => {
                 router.push('/adm/reserva');
 
@@ -43,7 +46,7 @@ export default function UpdateReserva() {
     const [pagamento, setPagamento] = useState([]);
     useEffect(() => {
         axios
-            .get("http://localhost:8080/cliente")
+            .get("https://localhost:7240/api/Clientes")
             .then((response) => {
                 setCliente(response.data);
             })
@@ -54,7 +57,7 @@ export default function UpdateReserva() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8080/viagem")
+            .get("https://localhost:7240/api/Viagem")
             .then((response) => {
                 setViagem(response.data);
             })
@@ -65,7 +68,7 @@ export default function UpdateReserva() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:8080/pagamento")
+            .get("https://localhost:7240/api/Pagamentos")
             .then((response) => {
                 setPagamento(response.data);
             })
@@ -73,6 +76,13 @@ export default function UpdateReserva() {
                 console.error("Erro ao buscar a lista de pagamentos:", error);
             });
     }, []);
+
+    const formatarValorParaReal = (valor) => {
+        return parseFloat(valor).toLocaleString('pt-BR', {
+            style: 'currency',
+            currency: 'BRL',
+        });
+    };
     return (
         <>
             <Head>
@@ -181,7 +191,7 @@ export default function UpdateReserva() {
                                                         <option value={''}>--- Consultar Dados ---</option>
                                                         {pagamento.map((element) => (
                                                             <option key={element.id} value={element.id}>
-                                                                {element.id} - {element.valorPag}
+                                                                {element.id} - {formatarValorParaReal(element.valorPag)}
                                                             </option>
                                                         ))}
                                                     </select>

@@ -13,7 +13,7 @@ export default function viagem() {
     useEffect(() => {
       // Faça uma chamada GET para a API Spring Boot
       axios
-        .get("http://localhost:8080/viagem")
+        .get("https://localhost:7240/api/Viagem")
         .then((response) => {
           setViagem(response.data);
         })
@@ -25,10 +25,10 @@ export default function viagem() {
     const handleDeleteViagem = (viagemId) => {
         if (window.confirm('Tem certeza que deseja excluir esta viagem nº ' + viagemId + '?')) {
             axios
-                .delete(`http://localhost:8080/viagem/${viagemId}`)
+                .delete(`https://localhost:7240/api/Viagem/${viagemId}`)
                 .then(() => {
                     // Atualiza a lista de clientes após a exclusão bem-sucedida (opcional)
-                    axios.get("http://localhost:8080/viagem")
+                    axios.get("https://localhost:7240/api/Viagem")
                         .then((response) => {
                             setViagem(response.data);
                             router.push("/adm/viagem"); // Redireciona após a exclusão bem-sucedida
@@ -67,8 +67,8 @@ export default function viagem() {
                                 <td>{element.id}</td>
                                 <td>{element.origem}</td>
                                 <td>{element.destino}</td>
-                                <td>{format(new Date(element.dataIda + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
-                                <td>{format(new Date(element.dataVolta  === null ? '-' : element.dataVolta + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
+                                <td>{format(element.dataIda, 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
+                                <td>{format(element.dataVolta, 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
                                 <td>
                                     <Link href={`/adm/update-viagem/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
                                     <Link href={`/adm/viagem`} className="btn btn btn-danger"

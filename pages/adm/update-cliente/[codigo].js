@@ -12,9 +12,14 @@ export default function UpdateCliente() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/cliente/${client.id}`)
+            .get(`https://localhost:7240/api/Clientes/${client.id}`)
             .then((response) => {
-                setClient(response.data);
+                setClient({
+                    ...response.data,
+                    dataNascimento: response.data.dataNascimento.split('T')[0]
+                });
+                
+                console.log(response.data);
             })
             .catch((error) => {
                 console.error("Erro ao buscar detalhes do cliente:", error);
@@ -27,7 +32,7 @@ export default function UpdateCliente() {
 
     const handleUpdateClient = () => {
         axios
-            .put("http://localhost:8080/cliente/" + client.id, client)
+            .put(`https://localhost:7240/api/Clientes/${client.id}`, client)
             .then((response) => {
                 router.push('/adm');
 

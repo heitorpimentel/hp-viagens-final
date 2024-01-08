@@ -11,9 +11,9 @@ export default function index() {
     const [clients, setClients] = useState([]);
 
     useEffect(() => {
-        // Faça uma chamada GET para a API Spring Boot
+        // Faça uma chamada GET para a API
         axios
-            .get("http://localhost:8080/cliente")
+            .get("https://localhost:7240/api/Clientes")
             .then((response) => {
                 setClients(response.data);
             })
@@ -25,10 +25,10 @@ export default function index() {
     const handleDeleteClient = (clientId) => {
         if (window.confirm('Tem certeza que deseja excluir este cliente ' + clientId + '?')) {
             axios
-                .delete(`http://localhost:8080/cliente/${clientId}`)
+                .delete(`https://localhost:7240/api/Clientes/${clientId}`)
                 .then(() => {
                     // Atualiza a lista de clientes após a exclusão bem-sucedida
-                    axios.get("http://localhost:8080/cliente")
+                    axios.get("https://localhost:7240/api/Clientes")
                         .then((response) => {
                             setClients(response.data);
                             router.push("/adm"); // Redireciona após a exclusão bem-sucedida
@@ -69,7 +69,7 @@ export default function index() {
                                 <td>{element.id}</td>
                                 <td>{element.nome}</td>
                                 <td>{element.cpf}</td>
-                                <td>{format(new Date(element.dataNascimento + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
+                                <td>{format(element.dataNascimento, 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
                                 <td>{element.telefone}</td>
                                 <td>{element.sexo}</td>
                                 <td>{element.email}</td>

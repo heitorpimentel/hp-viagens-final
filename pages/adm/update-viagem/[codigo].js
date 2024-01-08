@@ -12,9 +12,13 @@ export default function UpdateViagem() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/viagem/${viagem.id}`)
+            .get(`https://localhost:7240/api/Viagem/${viagem.id}`)
             .then((response) => {
-                setViagem(response.data);
+                setViagem({
+                    ...response.data,
+                    dataIda: response.data.dataIda.split('T')[0],
+                    dataVolta: response.data.dataVolta.split('T')[0]
+                });
             })
             .catch((error) => {
                 console.error("Erro ao buscar detalhes da viagem:", error);
@@ -27,7 +31,7 @@ export default function UpdateViagem() {
 
     const handleUpdateViagem = () => {
         axios
-            .put("http://localhost:8080/viagem/" + viagem.id, viagem)
+            .put("https://localhost:7240/api/Viagem/" + viagem.id, viagem)
             .then((response) => {
                 router.push('/adm/viagem');
 

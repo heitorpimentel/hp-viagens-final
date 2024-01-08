@@ -13,7 +13,7 @@ export default function pagamento() {
     useEffect(() => {
       // Faça uma chamada GET para a API Spring Boot
       axios
-        .get("http://localhost:8080/pagamento")
+        .get("https://localhost:7240/api/Pagamentos")
         .then((response) => {
           setPagamentos(response.data);
         })
@@ -25,10 +25,10 @@ export default function pagamento() {
     const handleDeletePagamento = (pagamentoId) => {
         if (window.confirm('Tem certeza que deseja excluir esta pagamento nº ' + pagamentoId + '?')) {
             axios
-                .delete(`http://localhost:8080/pagamento/${pagamentoId}`)
+                .delete(`https://localhost:7240/api/Pagamentos/${pagamentoId}`)
                 .then(() => {
                     // Atualiza a lista de clientes após a exclusão bem-sucedida (opcional)
-                    axios.get("http://localhost:8080/pagamento")
+                    axios.get("https://localhost:7240/api/Pagamentos")
                         .then((response) => {
                             setPagamentos(response.data);
                             router.push("/adm/pagamento"); // Redireciona após a exclusão bem-sucedida
@@ -72,7 +72,7 @@ export default function pagamento() {
                             <tr className='text-nowrap text-center' >
                                 <td>{element.id}</td>
                                 <td className='text-left'>{formatarValorParaReal(element.valorPag)}</td>
-                                <td>{format(new Date(element.dataPagamento + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
+                                <td>{format(element.dataPagamento, 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
                                 <td>{element.formaPag}</td>
                                 <td>{element.parcela}x</td>
                                 <td>

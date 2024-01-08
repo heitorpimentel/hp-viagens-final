@@ -12,9 +12,12 @@ export default function UpdatePagamento() {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/pagamento/${pagamento.id}`)
+            .get(`https://localhost:7240/api/Pagamentos/${pagamento.id}`)
             .then((response) => {
-                setPagamento(response.data);
+                setPagamento({
+                    ...response.data,
+                    dataPagamento: response.data.dataPagamento.split('T')[0]
+                });
             })
             .catch((error) => {
                 console.error("Erro ao buscar detalhes da pagamento:", error);
@@ -27,7 +30,7 @@ export default function UpdatePagamento() {
 
     const handleUpdatePagamento = () => {
         axios
-            .put("http://localhost:8080/pagamento/" + pagamento.id, pagamento)
+            .put("https://localhost:7240/api/Pagamentos/" + pagamento.id, pagamento)
             .then((response) => {
                 router.push('/adm/pagamento');
 

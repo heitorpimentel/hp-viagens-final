@@ -15,7 +15,7 @@ export default function addPag() {
 
   const handleAddPagamento = () => {
     axios
-      .post("http://localhost:8080/pagamento/salvarPagamento", newPagamento)
+      .post("https://localhost:7240/api/Pagamentos", newPagamento)
       .then((response) => {
         router.push("/adm/pagamento");
       })

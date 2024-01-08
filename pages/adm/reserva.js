@@ -13,7 +13,7 @@ export default function reserva() {
     useEffect(() => {
       // Faça uma chamada GET para a API Spring Boot
       axios
-        .get("http://localhost:8080/reserva")
+        .get("https://localhost:7240/api/Reservas")
         .then((response) => {
           setReserva(response.data);
           console.log(response.data);
@@ -26,10 +26,10 @@ export default function reserva() {
     const handleDeleteReserva = (reservaId) => {
         if (window.confirm('Tem certeza que deseja excluir esta reserva nº ' + reservaId + '?')) {
             axios
-                .delete(`http://localhost:8080/reserva/${reservaId}`)
+                .delete(`https://localhost:7240/api/Reservas/${reservaId}`)
                 .then(() => {
                     // Atualiza a lista de reserva após a exclusão bem-sucedida
-                    axios.get("http://localhost:8080/cliente")
+                    axios.get("https://localhost:7240/api/Reservas")
                         .then((response) => {
                             setReserva(response.data);
                             router.push("/adm"); // Redireciona após a exclusão bem-sucedida
@@ -42,12 +42,6 @@ export default function reserva() {
                     alert("Erro ao excluir reserva: " + error);
                 });
         }
-    };
-    const formatarValorParaReal = (valor) => {
-        return parseFloat(valor).toLocaleString('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
-        });
     };
     return (
         <div className={style.body}>
@@ -62,11 +56,9 @@ export default function reserva() {
                         <tr className={`${style.tabela} text-center`}>
                             <th>Id</th>
                             <th>Data da Reserva</th>
-                            <th>Nome do Cliente</th>
-                            <th>CPF</th>
-                            <th>Origem</th>
-                            <th>Destino</th>
-                            <th>Valor</th>
+                            <th>ID do Cliente</th>
+                            <th>ID da Viagem</th>
+                            <th>ID do Pagamento</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
@@ -74,12 +66,10 @@ export default function reserva() {
                         <tbody key={element.id} className='text-nowrap text-center' >
                             <tr  >
                                 <td>{element.id}</td>
-                                <td>{format(new Date(element.dataReserva + 'T03:00:00Z'), 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
-                                <td>{element.cliente.nome}</td>
-                                <td>{element.cliente.cpf}</td>
-                                <td>{element.viagem.origem}</td>
-                                <td>{element.viagem.destino}</td>
-                                <td className='text-left'>{formatarValorParaReal(element.pagamento.valorPag)}</td>
+                                <td>{format(element.dataReserva, 'dd \'de\' MMMM \'de\' yyyy', { locale: ptBR })}</td>
+                                <td>{element.clienteId}</td>
+                                <td>{element.viagemId}</td>
+                                <td>{element.pagamentoId}</td>
                                 <td>
                                     <Link href={`/adm/update-reserva/${element.id}`} className="btn btn-warning"> <i class="bi bi-pencil-square"></i></Link>
                                     <Link href={`/adm/reserva`} className="btn btn btn-danger"

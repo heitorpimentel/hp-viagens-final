@@ -15,7 +15,7 @@ export default function addVi() {
 
     const handleAddViagem = () => {
         axios
-            .post("http://localhost:8080/viagem/salvarViagem", newViagem)
+            .post("https://localhost:7240/api/Viagem", newViagem)
             .then((response) => {
                 router.push("/adm/viagem");
             })

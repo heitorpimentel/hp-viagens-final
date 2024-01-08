@@ -15,7 +15,7 @@ export default function addCli() {
 
     const handleAddClient = () => {
         axios
-            .post("http://localhost:8080/cliente/salvarCliente", newClient)
+            .post("https://localhost:7240/api/Clientes", newClient)
             .then((response) => {
                 router.push("/adm");
             })

@@ -15,7 +15,7 @@ export default function addRes() {
 
   const handleAddReserva = () => {
     axios
-      .post("http://localhost:8080/reserva/salvarReserva", newReserva)
+      .post("https://localhost:7240/api/Reservas", newReserva)
       .then((response) => {
         router.push("/adm/reserva");
       })
@@ -30,7 +30,7 @@ export default function addRes() {
   const [pagamento, setPagamento] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8080/cliente")
+      .get("https://localhost:7240/api/Clientes")
       .then((response) => {
         setCliente(response.data);
       })
@@ -41,7 +41,7 @@ export default function addRes() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/viagem")
+      .get("https://localhost:7240/api/Viagem")
       .then((response) => {
         setViagem(response.data);
       })
@@ -52,7 +52,7 @@ export default function addRes() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/pagamento")
+      .get("https://localhost:7240/api/Pagamentos")
       .then((response) => {
         setPagamento(response.data);
       })
@@ -60,6 +60,13 @@ export default function addRes() {
         console.error("Erro ao buscar a lista de pagamentos:", error);
       });
   }, []);
+
+  const formatarValorParaReal = (valor) => {
+    return parseFloat(valor).toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+    });
+};
   return (
     <>
       <Head>
@@ -162,7 +169,7 @@ export default function addRes() {
                             <option value={''}>--- Consultar Dados ---</option>
                             {pagamento.map((element) => (
                               <option key={element.id} value={element.id}>
-                                {element.id} - {element.valorPag}
+                                {element.id} - {formatarValorParaReal(element.valorPag)}
                               </option>
                             ))}
                           </select>
