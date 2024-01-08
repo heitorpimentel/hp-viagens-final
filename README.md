@@ -31,6 +31,10 @@ Abra no [http://localhost:3000](http://localhost:3000) com seu navegador para ve
 ![image](https://github.com/heitorpimentel/hp-viagens-final/assets/130229709/8ead80dc-9e50-4c4a-b792-74d7f6a883f4)
 
 
-
+## Modelagem do banco de dados
+### Modelo conceitual
+![image](https://github.com/heitorpimentel/HpViagensAPI/assets/130229709/dcd383a3-7d73-4d7f-8a3a-a9bb380bde1c)
+### Modelo lógico
+![image](https://github.com/heitorpimentel/HpViagensAPI/assets/130229709/17328a10-bcc2-405f-b70a-6057eaaed9c2)
 
 
