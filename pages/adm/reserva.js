@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios";
 import Link from 'next/link';
 import style from '@/styles/Cliente.module.css'
-import SideNav from '@/components/SideNav';
 import Head from 'next/head';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
@@ -48,7 +47,6 @@ export default function reserva() {
             <Head>
                 <title>ADM - Reservas</title>
             </Head>
-            <SideNav />
             <h1 className={style.h1}>Lista de Reservas</h1>
                 <div className={`${style.conteudo} container table-hover table-responsive`}>
                 <table className={`mx-3 m-auto table table-striped text-nowrap`}>

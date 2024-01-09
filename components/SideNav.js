@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styles from '../styles/SideNav.module.css'
+import {useRouter} from 'next/router'
 
 export default function SideNav() {
+    const router = useRouter();
     const [larguraNavigation, setLarguraNavigation] = useState('60px');
 
     const toggleMenu = () => {
@@ -23,7 +25,7 @@ export default function SideNav() {
     }
     return (
         <>
-            <div>
+            <div className={`${router.pathname === '/' || router.pathname === '/404' || router.pathname === '/cadastro' || router.pathname === '/login' || router.pathname === '/contato' || router.pathname === '/hoteis' || router.pathname === '/onibus' || router.pathname === '/promocoes' ? 'd-none' : ''}`}>
                 <div className={`${styles.navigation} fixed-bottom`} style={{ width: larguraNavigation }}>
                 <div className={`${styles.toggle} ${styles.iconNav} ${styles.navigation}  fixed-top pl-2`} onClick={toggleMenu} style={{ width: larguraNavigation }}>
                     <i className="bi bi-list text-center text-white " />

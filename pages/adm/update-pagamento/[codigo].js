@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
-import SideNav from '@/components/SideNav';
 import Head from 'next/head'
 
 export default function UpdatePagamento() {
@@ -46,7 +45,6 @@ export default function UpdatePagamento() {
                 <title>ADM - Atualização de pagamentos</title>
             </Head>
             <main className={styles.body}>
-                <SideNav />
                 <h1 className={`${styles.h1}`}>Atualizar pagamento nº: {pagamento.id}</h1>
                 <div className={`${styles.conteudo} row py-5 container`}>
                     <div className="col-sm-12">

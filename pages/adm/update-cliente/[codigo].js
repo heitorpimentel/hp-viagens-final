@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css';
-import SideNav from '@/components/SideNav';
 import Head from 'next/head';
 
 export default function UpdateCliente() {
@@ -66,7 +65,6 @@ export default function UpdateCliente() {
                 <title>ADM - Atualização de clientes</title>
             </Head>
             <main className={styles.body}>
-                <SideNav />
                 <h1 className={`${styles.h1}`}>Atualizar Cliente: {client.nome}</h1>
                 <div className={`${styles.conteudo} row py-5 container`}>
                     <div className="col-sm-12">

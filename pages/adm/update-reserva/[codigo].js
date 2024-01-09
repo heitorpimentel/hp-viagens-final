@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
-import SideNav from '@/components/SideNav';
 import Head from 'next/head'
 
 export default function UpdateReserva() {
@@ -89,7 +88,6 @@ export default function UpdateReserva() {
                 <title>ADM - Atualização de Reservas</title>
             </Head>
             <main className={styles.body}>
-                <SideNav />
                 <h1 className={`${styles.h1}`}>Atualizar Reserva nº {reserva.id}</h1>
                 <div className={`${styles.conteudo} row py-5 container`}>
                     <div className="col-sm-12">

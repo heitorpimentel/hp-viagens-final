@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import axios from "axios";
 import { useRouter } from "next/router";
 import styles from '@/styles/Cliente.module.css'
-import SideNav from '@/components/SideNav';
 import Head from 'next/head'
 
 export default function addVi() {
@@ -30,7 +29,6 @@ export default function addVi() {
                 <title>ADM - Cadastro de viagens</title>
             </Head>
             <main className={styles.body}>
-                <SideNav />
                 <h1 className={`${styles.h1}`}>Cadastro de Viagem</h1>
                 <div className={`${styles.conteudo} row py-5 container`}>
                     <div className="col-sm-12">
