@@ -1,11 +1,11 @@
 # Agencia de Viagens
-Site de uma agência de viagens usando React com o framework NextJS e API em Java
+Site de uma agência de viagens usando React com o framework NextJS e API em Java ou em C#, só escolher a raiz.
 ### Tecnologias utilizadas
 - React (NextJS)
 - HTML Semântico
 - CSS
 - BootStrap
-- Consumo de API em Java
+- Consumo de API em Java ou C#
 
 ## Inicio da aplicação
 
