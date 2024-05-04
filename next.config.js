@@ -3,9 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+/* module.exports = nextConfig
 const isProd = process.env.NODE_ENV === "production"
-const prefix = isProd ? "/hp-viagens-final" : "";
+const prefix = isProd ? "/hp-viagens-final" : ""; */
 
 /* module.exports = {
     basePath: prefix,
