@@ -1,4 +1,5 @@
 // pages/_error.js
+import React from 'react'
 
 function ErrorPage({ statusCode }) {
     return (
