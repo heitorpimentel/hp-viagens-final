@@ -87,7 +87,7 @@ export default function Home() {
                             id="trecho-de-ida"
                             list="lista-lugares"
                             placeholder="Busque por aeroporto"
-                            required="true"
+                            required={true}
                           />
                         </div>
                       </div>
@@ -107,7 +107,7 @@ export default function Home() {
                             id="trecho-de-volta"
                             list="lista-lugares"
                             placeholder="Busque por aeroporto"
-                            required="true"
+                            required={true}
                           />
                         </div>
                       </div>
@@ -127,7 +127,7 @@ export default function Home() {
                             type="date"
                             aria-label="Ida"
                             id="data-ida"
-                            required="true"
+                            required={true}
                           />
                         </div>
                       </div>
@@ -161,9 +161,9 @@ export default function Home() {
                         <select
                           className="form-control"
                           id="inlineFormCustomSelectPref"
-                          required="true"
+                          required={true}
                         >
-                          <option selected="">Escolha</option>
+                          <option defaultValue={"1"}>Escolha</option>
                           <option value={1}>1</option>
                           <option value={2}>2</option>
                           <option value={3}>3</option>

@@ -91,7 +91,7 @@ export default function UpdateCliente() {
                                                         type="text"
                                                         className="form-control"
                                                         placeholder="Nome do cliente"
-                                                        required="true"
+                                                        required={true}
                                                         name="nome"
                                                         value={client.nome}
                                                         onChange={handleInputChange}
@@ -126,7 +126,7 @@ export default function UpdateCliente() {
                                                     name="sexo"
                                                     id="gridRadios1"
                                                     value="Masculino"
-                                                    required="true"
+                                                    required={true}
                                                     checked={client.sexo === "Masculino"}
                                                     onChange={handleInputChange}
                                                 />
@@ -141,7 +141,7 @@ export default function UpdateCliente() {
                                                     name="sexo"
                                                     id="gridRadios2"
                                                     value="Feminino"
-                                                    required="true"
+                                                    required={true}
                                                     checked={client.sexo === "Feminino"}
                                                     onChange={handleInputChange}
                                                 />
@@ -156,7 +156,7 @@ export default function UpdateCliente() {
                                                     name="sexo"
                                                     id="gridRadios3"
                                                     value="Outro"
-                                                    required="true"
+                                                    required={true}
                                                     checked={client.sexo === "Outro"}
                                                     onChange={handleInputChange}
                                                 />
@@ -191,7 +191,7 @@ export default function UpdateCliente() {
                                                         type="email"
                                                         className="form-control"
                                                         placeholder="email@exemplo.com"
-                                                        required="true"
+                                                        required={true}
                                                         name="email"
                                                         value={client.email}
                                                         onChange={handleInputChange}
@@ -206,7 +206,7 @@ export default function UpdateCliente() {
                                                     <input
                                                         type="date"
                                                         className="form-control"
-                                                        required="true"
+                                                        required={true}
                                                         name="dataNascimento"
                                                         value={client.dataNascimento}
                                                         onChange={handleInputChange}
@@ -221,7 +221,7 @@ export default function UpdateCliente() {
                                                         type="password"
                                                         className="form-control"
                                                         id="inputSenha"
-                                                        required="true"
+                                                        required={true}
                                                         name="senha"
                                                         value={client.senha}
                                                         onChange={handleInputChange}

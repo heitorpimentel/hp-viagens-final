@@ -82,7 +82,7 @@ export default function addCli() {
                                                         type="text"
                                                         className="form-control"
                                                         placeholder="Nome do cliente"
-                                                        required="true"
+                                                        required={true}
                                                         name="nome"
                                                         value={newClient.nome}
                                                         onChange={handleInputChange}
@@ -120,7 +120,7 @@ export default function addCli() {
                                                     name="sexo"
                                                     id="gridRadios1"
                                                     value="Masculino"
-                                                    required="true"
+                                                    required={true}
                                                     checked={newClient.sexo === "Masculino"}
                                                     onChange={handleInputChange}
                                                 />
@@ -135,7 +135,7 @@ export default function addCli() {
                                                     name="sexo"
                                                     id="gridRadios2"
                                                     value="Feminino"
-                                                    required="true"
+                                                    required={true}
                                                     checked={newClient.sexo === "Feminino"}
                                                     onChange={handleInputChange}
                                                 />
@@ -150,7 +150,7 @@ export default function addCli() {
                                                     name="sexo"
                                                     id="gridRadios3"
                                                     value="Outro"
-                                                    required="true"
+                                                    required={true}
                                                     checked={newClient.sexo === "Outro"}
                                                     onChange={handleInputChange}
                                                 />
@@ -185,7 +185,7 @@ export default function addCli() {
                                                         type="email"
                                                         className="form-control"
                                                         placeholder="email@exemplo.com"
-                                                        required="true"
+                                                        required={true}
                                                         name="email"
                                                         value={newClient.email}
                                                         onChange={handleInputChange}
@@ -200,7 +200,7 @@ export default function addCli() {
                                                     <input
                                                         type="date"
                                                         className="form-control"
-                                                        required="true"
+                                                        required={true}
                                                         name="dataNascimento"
                                                         value={newClient.dataNascimento}
                                                         onChange={handleInputChange}
@@ -215,7 +215,7 @@ export default function addCli() {
                                                         type="password"
                                                         className="form-control"
                                                         id="inputSenha"
-                                                        required="true"
+                                                        required={true}
                                                         name="senha"
                                                         value={newClient.senha}
                                                         onChange={handleInputChange}
