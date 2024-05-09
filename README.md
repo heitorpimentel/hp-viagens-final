@@ -1,5 +1,6 @@
 # Agencia de Viagens
-Site de uma agência de viagens usando React com o framework NextJS e API em Java ou em C#, só escolher a raiz.
+Site de uma agência de viagens usando React com o framework NextJS e API em Java ou em C#, só escolher a raiz. No caso de escolher Java, o repositório raiz já está sendo usado com Java(master). 
+#### Link do deploy: [HP Viagens](https://hpviagens.vercel.app)
 ### Tecnologias utilizadas
 - React (NextJS)
 - HTML Semântico
